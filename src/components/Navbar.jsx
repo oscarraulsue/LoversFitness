@@ -16,7 +16,7 @@ const Navbar = () => {
     const [open, setOpen] = useState(false);
     return (
         <>
-          <AppBar position="sticky" className={classes.root}>
+        
          
          <Toolbar className={classes.toolbar}>
          <div>
@@ -78,7 +78,7 @@ const Navbar = () => {
         <MenuTwoToneIcon fontSize = "large" />
         </IconButton>
          </Toolbar>
-          </AppBar>
+         
           <Drawer anchor="right" open={open} onClose={()=>setOpen(false)} className={classes.menul}>
           <IconButton onClick={()=>setOpen(false)} className={classes.close}>
           <CancelIcon fontSize="large"  />
