@@ -24,13 +24,13 @@ const Navbar = () => {
           <img src="" className={classes.logo} alt= "Logo"/>
          </a>
          <a href= "about">
-          <img src="" className={classes.logo} alt= "Logo"/>
+          <img src="https://res.cloudinary.com/dky22nhv5/image/upload/v1632679406/facebook_gqfii0.png" className={classes.logo} alt= "Logo"/>
          </a>
          <a href= "about">
-          <img src="" className={classes.logo} alt= "Logo"/>
+          <img src="https://res.cloudinary.com/dky22nhv5/image/upload/v1632679407/inst_yc3kha.png" className={classes.logo} alt= "Logo"/>
          </a>
          <a href= "about">
-          <img src="" className={classes.logo} alt= "Logo"/>
+          <img src="https://res.cloudinary.com/dky22nhv5/image/upload/v1632679408/tw_ohxaz4.png" className={classes.logo} alt= "Logo"/>
          </a>
          </div>
          <List edge="end" className={classes.list}>
