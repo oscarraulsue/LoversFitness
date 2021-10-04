@@ -8,12 +8,16 @@ import InsertCommentTwoToneIcon from '@material-ui/icons/InsertCommentTwoTone';
 import MenuTwoToneIcon from '@material-ui/icons/MenuTwoTone';
 import {useState} from "react"
 import CancelIcon from '@material-ui/icons/Cancel';
-
+// import { useDispatch } from 'react-redux';
 
 
 const Navbar = () => {
+
+    // const dispatch = useDispatch()
+       
     const classes = useStyles();
     const [open, setOpen] = useState(false);
+
     return (
         <>
         
@@ -66,13 +70,16 @@ const Navbar = () => {
                  smooth={true} 
                  duration={500}
                   offset={-64}>Blog</Link>
-              <Link 
-                 to ="/" 
-                 spy ={true} 
-                 ActiveClass = 'active' 
-                 smooth={true} 
-                 duration={500}
-                 offset={-64}>Iniciar sesión</Link>
+
+              <Link to="/login"   
+                spy ={true} 
+                ActiveClass = 'active' 
+                smooth={true} 
+                duration={500}
+                offset={-64}
+                // onClick={() =>dispatch(Login())}
+                >Iniciar sesión</Link>
+                
          </List>
          <IconButton edge="end" className={classes.listbottom} onClick={()=>setOpen(true)}>
         <MenuTwoToneIcon fontSize = "large" />
@@ -116,13 +123,13 @@ const Navbar = () => {
                  smooth={true} 
                  duration={500}
                   offset={-64}>Blog</Link>
-                <Link 
-                 to ="/" 
+                {/* <Link 
+                 to ="/login" 
                  spy ={true} 
                  ActiveClass = 'active' 
                  smooth={true} 
                  duration={500}
-                 offset={-64}>Iniciar sesión</Link>
+                 offset={-64}>Iniciar sesión</Link> */}
  
           </Drawer> 
         </>  

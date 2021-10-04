@@ -74,7 +74,7 @@ export const Registro = () => {
                     Registrarse
                 </Button>
 
-                <Link to="/">Login</Link>
+                <Link to="/login">Login</Link>
 
             </Form>
 
