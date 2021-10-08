@@ -7,6 +7,7 @@ import {loginEmailPassword, loginGoogle } from '../actions/actionLogin';
 
 function Login() {
 
+    
     const dispatch = useDispatch();
 
     const [ values, handleInputChange, reset ] = useForm({
@@ -15,14 +16,64 @@ function Login() {
     })
 
     const {email,password} = values;
+    const config = async () => {
 
+        };
+        const peticionGet =  () => {
+            console.log("hola sientre")
+            var axios = require('axios');
+          
+        var config = {
+            method: 'get',
+            url: 'https://api.chatengine.io/users/',
+            headers: {
+                'PRIVATE-KEY': '{{9cd8488d-13cc-4d3a-8ecf-ee89a5690313}}'
+            },
+             };
+        
+        axios(config)
+        .then(function (response) {
+            let data = response.data;
+             let buscador = data.find(user => user.username === "1jorgevalles@gmail.com");
+            console.log(JSON.stringify(response.data));
+            console.log(data)
+            console.log(buscador)
+            console.log(buscador.id)
+            console.log("response")
+
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+        
+        }
+
+
+        const peticionDelete =  () => {
+            console.log("hola sientre")
+            var axios = require('axios');
+          
+        var config = {
+            method: 'delete',
+            url: 'https://api.chatengine.io/users/132250',
+            headers: {
+                'PRIVATE-KEY': '{{9cd8488d-13cc-4d3a-8ecf-ee89a5690313}}'
+            },
+             };
+        
+        axios(config)
+                
+        }
     const handleLogin = (e) => {
        e.preventDefault();
-       dispatch(loginEmailPassword(email,password));
+       peticionGet()
+    // dispatch(loginEmailPassword(email,password));
     }
 
+
     const handleGoogle = () => {
-        dispatch(loginGoogle());
+        peticionDelete()
+        // dispatch(loginGoogle());
    }
 
     return (
@@ -61,7 +112,7 @@ function Login() {
                     </Container>
                 </Container>
             </Container>
-            <Link to="/registro">Registrarse</Link>
+            <Link to="/atencionmedica">Registrarse</Link>
 
         </Form>
 

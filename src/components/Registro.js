@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useForm } from '../hooks/useForm';
 import {registroEmailPasswordNombre} from '../actions/actionRegister';
 import {useDispatch} from 'react-redux'
+import { registroChat } from '../actions/actionChat';
 
 export const Registro = () => {
 
@@ -19,8 +20,11 @@ export const Registro = () => {
 
     const handleRegistro = (e) => {
         e.preventDefault();
-        dispatch(registroEmailPasswordNombre(email,pass1,nombre))
+        dispatch(registroEmailPasswordNombre(email,pass1,nombre), registroChat(email,nombre))
+   
     }
+
+   
 
     return (
         <div>
