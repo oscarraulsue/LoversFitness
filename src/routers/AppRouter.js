@@ -10,6 +10,7 @@ import {
 import Login from '../components/Login';
 import {Registro} from '../components/Registro';
 import AtencionMedica from '../components/AtencionMedica';
+
 import { About } from "../components/About";
 import { loginSincrono } from "../actions/actionLogin";
 import { PublicRouter } from "./PublicRouter";
