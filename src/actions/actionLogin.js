@@ -1,5 +1,5 @@
 import { getAuth, signInWithEmailAndPassword, signInWithPopup } from "@firebase/auth";
-import { google } from "../firebase/firebaseConfig";
+import { google, facebook } from "../firebase/firebaseConfig";
 import {types} from "../types/types";
 import { registroChat } from "./actionChat";
 
@@ -32,6 +32,21 @@ export const loginGoogle = () => {
         signInWithPopup(auth,google)
         .then(({user}) => {
           dispatch(loginSincrono(user.uid,user.displayName), registroChat(user.displayName,user.email, user.uid))
+        })
+        .catch(e =>{
+            console.log(e);
+        })
+    }
+}
+
+
+export const loginFacebook = () => {
+
+    return(dispatch) => {
+       
+        signInWithPopup(auth,facebook)
+        .then(({user}) => {
+          dispatch(loginSincrono(user.uid,user.displayName))
         })
         .catch(e =>{
             console.log(e);

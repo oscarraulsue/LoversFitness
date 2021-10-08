@@ -3,7 +3,8 @@ import { Form, Button, Container } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import {useForm } from '../hooks/useForm';
 import {useDispatch} from 'react-redux';
-import {loginEmailPassword, loginGoogle } from '../actions/actionLogin';
+import {loginEmailPassword, loginGoogle, loginFacebook } from '../actions/actionLogin';
+import Navbar from './Navbar';
 
 function Login() {
 
@@ -68,6 +69,8 @@ function Login() {
        e.preventDefault();
        peticionGet()
     // dispatch(loginEmailPassword(email,password));
+       dispatch(loginEmailPassword(email,password));
+    console.log(loginEmailPassword)
     }
 
 
@@ -75,6 +78,14 @@ function Login() {
         peticionDelete()
         // dispatch(loginGoogle());
    }
+
+   const handleFacebook = () => {
+    dispatch(loginFacebook());
+    }
+
+    const iniciarSesion = () => {
+        dispatch(Navbar())
+    }
 
     return (
         <Form onSubmit={handleLogin}>
@@ -98,7 +109,7 @@ function Login() {
                     onChange={handleInputChange} />
             </Form.Group>
             <Button variant="primary" type="submit">
-                Enviar
+                Iniciar Sesion
             </Button>
 
             <Container className="auth__social-networks">
@@ -110,9 +121,20 @@ function Login() {
                     <Container className="google-icon-wrapper">
                         <img className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="google button" />
                     </Container>
-                </Container>
+                    </Container>
+
+                    <Container
+                    className="facebook-btn"
+                    onClick={handleFacebook}>
+                    </Container>
+                    <Container className="facebook-icon-wrapper">
+                        <img className="facebook-icon" src="https://res.cloudinary.com/djlvgbuji/image/upload/v1632858497/icon-fb_l9ewqn.jpg" width="50px" height="48px" alt="facebook button" />
+                    </Container>
+                
             </Container>
             <Link to="/atencionmedica">Registrarse</Link>
+            <Link to="/registro">Registrarse</Link><br />
+            <Link to="/">Página Principal</Link>
 
         </Form>
 
