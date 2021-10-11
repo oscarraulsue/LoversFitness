@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { Coaches } from './Coaches';
 
 function App () {
   const [challenges, setChallenges] = useState([])
@@ -46,6 +47,8 @@ function App () {
             </div>)
              }) }
              </div>
+             <h2 className="titulo">Coaches</h2>
+             <Coaches />
         </div>
          );
 }
