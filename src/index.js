@@ -6,12 +6,16 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import {Provider} from 'react-redux';
 import { RegistroApp } from './RegistroApp';
 import { store } from './store/store';
+import { Tienda } from './components/Tienda';
 
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const client = new QueryClient();
 
 ReactDOM.render(
-  <Provider store={store}>
-    <RegistroApp />
-  </Provider>,
+  <QueryClientProvider client={client}>
+    <Tienda />
+  </QueryClientProvider>,
 
-  document.getElementById('root')
+document.getElementById('root')
 );

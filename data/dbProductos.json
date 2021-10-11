@@ -1,0 +1,37 @@
+{
+    "productos": [
+    {
+        "id": 1,
+        "poster": "./assets/images/Imagen1.png"
+    },
+    {
+        "id": 2,
+        "poster": "./assets/images/Imagen2.png"
+    },
+    {
+        "id": 3,
+        "poster": "./assets/images/Imagen3.png"
+    },
+    {
+        "id": 4,
+        "poster": "./assets/images/Imagen4.png"
+    },
+    {
+        "id": 5,
+        "poster": "./assets/images/Imagen5.png"
+    },
+    {
+        "id": 6,
+        "poster": "./assets/images/Imagen7.png"
+    },
+    {
+        "id": 7,
+        "poster": "./assets/images/Imagen7.png"
+    },
+    {
+        "id": 8,
+        "poster": "./assets/images/Imagen8.png"
+    }
+
+    ]
+}

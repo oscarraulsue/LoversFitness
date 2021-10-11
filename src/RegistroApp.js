@@ -6,7 +6,7 @@ export const RegistroApp = () => {
     return (
         <div>
             <Navbar />
-            <AppRouter/>
+            <AppRouter />
         </div>
     )
 }

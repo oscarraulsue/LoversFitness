@@ -5,18 +5,22 @@ import PermIdentityTwoToneIcon from '@material-ui/icons/PermIdentityTwoTone';
 import EmojiObjectsTwoToneIcon from '@material-ui/icons/EmojiObjectsTwoTone';
 import WorkTwoToneIcon from '@material-ui/icons/WorkTwoTone';
 import InsertCommentTwoToneIcon from '@material-ui/icons/InsertCommentTwoTone';
+import Badge from "@material-ui/core/Badge";
 import MenuTwoToneIcon from '@material-ui/icons/MenuTwoTone';
 import {useState} from "react"
 import CancelIcon from '@material-ui/icons/Cancel';
+
+import AddShoppingCart from '@material-ui/icons/AddShoppingCart';
 // import { useDispatch } from 'react-redux';
 
 
-const Navbar = () => {
+const Navbar = ({ getTotalItem, setProductoOpen }) => {
 
     // const dispatch = useDispatch()
        
     const classes = useStyles();
     const [open, setOpen] = useState(false);
+    
 
     return (
         <>
@@ -132,6 +136,20 @@ const Navbar = () => {
                  offset={-64}>Iniciar sesión</Link> */}
  
           </Drawer> 
+   
+        <Toolbar>
+          
+          <div className={classes.grow} />
+          <div onClick={() => setProductoOpen(true)}
+          >
+            <IconButton aria-label="show 4 new mails" color="inherit">
+              <Badge badgeContent={getTotalItem} color="secondary">
+                <AddShoppingCart />
+              </Badge>
+            </IconButton>
+          </div>
+        </Toolbar>
+      
         </>  
     )
 }

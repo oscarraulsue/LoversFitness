@@ -1,5 +1,6 @@
 export const types ={
     login: 'login',
     register: 'register',
-    about: 'about'
+    about: 'about',
+    tienda: 'tienda'
 }
