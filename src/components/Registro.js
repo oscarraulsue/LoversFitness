@@ -10,8 +10,8 @@ export const Registro = () => {
     const dispatch = useDispatch();
 
     const [formValues, handleInputChange] = useForm({
-        nombre: 'oscar',
-        email: 'oscar@gmail.com',
+        nombre: 'oscar1',
+        email: 'oscar1@gmail.com',
         pass1: '123456',
         pass2: '123456'
     });

@@ -4,88 +4,52 @@ import { Link } from "react-router-dom";
 import {useForm } from '../hooks/useForm';
 import {useDispatch} from 'react-redux';
 import {loginEmailPassword, loginGoogle, loginFacebook } from '../actions/actionLogin';
-import Navbar from './Navbar';
+
 
 function Login() {
 
     
     const dispatch = useDispatch();
 
-    const [ values, handleInputChange, reset ] = useForm({
+    const [ values, handleInputChange ] = useForm({
         email: '',
         password: ''
     })
 
     const {email,password} = values;
-    const config = async () => {
+ 
 
-        };
-        const peticionGet =  () => {
-            console.log("hola sientre")
-            var axios = require('axios');
+
+        // const peticionDelete =  () => {
+        //     console.log("hola sientre")
+        //     var axios = require('axios');
           
-        var config = {
-            method: 'get',
-            url: 'https://api.chatengine.io/users/',
-            headers: {
-                'PRIVATE-KEY': '{{9cd8488d-13cc-4d3a-8ecf-ee89a5690313}}'
-            },
-             };
+        // var config = {
+        //     method: 'delete',
+        //     url: 'https://api.chatengine.io/users/132250',
+        //     headers: {
+        //         'PRIVATE-KEY': '{{9cd8488d-13cc-4d3a-8ecf-ee89a5690313}}'
+        //     },
+        //      };
         
-        axios(config)
-        .then(function (response) {
-            let data = response.data;
-             let buscador = data.find(user => user.username === "1jorgevalles@gmail.com");
-            console.log(JSON.stringify(response.data));
-            console.log(data)
-            console.log(buscador)
-            console.log(buscador.id)
-            console.log("response")
-
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
-        
-        }
-
-
-        const peticionDelete =  () => {
-            console.log("hola sientre")
-            var axios = require('axios');
-          
-        var config = {
-            method: 'delete',
-            url: 'https://api.chatengine.io/users/132250',
-            headers: {
-                'PRIVATE-KEY': '{{9cd8488d-13cc-4d3a-8ecf-ee89a5690313}}'
-            },
-             };
-        
-        axios(config)
+        // axios(config)
                 
-        }
+        // }
     const handleLogin = (e) => {
        e.preventDefault();
-       peticionGet()
-    // dispatch(loginEmailPassword(email,password));
        dispatch(loginEmailPassword(email,password));
     console.log(loginEmailPassword)
     }
 
 
     const handleGoogle = () => {
-        peticionDelete()
-        // dispatch(loginGoogle());
+      dispatch(loginGoogle());
    }
 
    const handleFacebook = () => {
     dispatch(loginFacebook());
     }
 
-    const iniciarSesion = () => {
-        dispatch(Navbar())
-    }
 
     return (
         <Form onSubmit={handleLogin}>

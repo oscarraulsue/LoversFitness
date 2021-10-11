@@ -1,51 +1,27 @@
-import React, { useState } from 'react'
-import { ChatEngineWrapper, ChatSocket, ChatFeed,ChatEngine, getOrCreateChat } from 'react-chat-engine'
-import { Col } from 'react-grid-system';
-// import { ChatEngine, getOrCreateChat } from 'react-chat-engine'
-import { useForm } from '../hooks/useForm';
-
-const DirectChatPage = (name, email2) => {
+import React from 'react'
+import { Link } from 'react-router-dom';
 
 
-	const [username, setUsername] = useState('oscarSue')
-    console.log(name, email2)
-    console.log(name, email2)
 
-	function createDirectChat(creds) {
-		getOrCreateChat(
-			creds,
-			{ is_direct_chat: true, usernames: 'oscarSue' },
-			
-		)
-	}
+const AtencionMedica = () => {
 
- 
-
-
-		
+	
 	return (
-		// <div>
-		// 	<Col xs={11} ms={8} md={6} lg={4} >
-		// 		<ChatEngineWrapper>
-		// 			<ChatSocket
-						
-		// 	senderUserName="oscarsue001@gmail.com"
-		// 	userSecret= "123456"
-		// 	projectID='497e79ac-497e-42b3-9cd4-742722a12565'
-		// 	chatID=""
-
-		// 			/>
-		// 		</ChatEngineWrapper>
-		// 	</Col>
-		// </div>
-		<ChatEngine
-			height='100vh'
-			userName="oscar@gmail.com"
-			userSecret= "1"
-			projectID='497e79ac-497e-42b3-9cd4-742722a12565'
-			renderNewChatForm={(creds) => createDirectChat(creds)}
-		/>
+		<div>
+    <img src="https://res.cloudinary.com/dky22nhv5/image/upload/v1633917139/telemedicina_npdlwb.webp" width="100%" alt="" />
+			<Link
+			to="/auth/medicinadeportiva"
+			>
+			<button>Ingresa a citas Telemedicina Deportiva</button>
+			</Link>
+  	<img src="https://res.cloudinary.com/dky22nhv5/image/upload/v1633918950/nutriii_u56bdu.webp" width="100%" alt="" />
+  			<Link
+			  to="/auth/nutricionista"
+			  >
+			  <button>Ingresa a citas Telemedicina Deportiva</button>
+			</Link>
+		</div>
 	)
 }
 
-export default DirectChatPage;
+export default AtencionMedica;

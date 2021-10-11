@@ -1,4 +1,4 @@
-import { getAuth, signInWithEmailAndPassword, signInWithPopup } from "@firebase/auth";
+import { getAuth, signInWithEmailAndPassword, signInWithPopup, signOut } from "@firebase/auth";
 import { google, facebook } from "../firebase/firebaseConfig";
 import {types} from "../types/types";
 import { registroChat } from "./actionChat";
@@ -64,5 +64,23 @@ export const loginSincrono = (id, displayname, email) => {
            email,
            }
     }
+}
+
+//logout
+
+export const logout = () => {
+    return async(dispatch) => {
+        const auth = getAuth();
+            await signOut(auth);
+            dispatch(logoutSincrono());
+
+    }
+}
+
+
+export const logoutSincrono = () => {
+   return{
+       type: types.logout,
+   }
 }
 

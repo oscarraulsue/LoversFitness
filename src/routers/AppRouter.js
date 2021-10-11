@@ -1,89 +1,89 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useState, useEffect } from "react";
+import {Puff} from 'react-loading-icons'
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-  Link
+  Switch
 } from "react-router-dom";
 import Login from '../components/Login';
-import {Registro} from '../components/Registro';
-import AtencionMedica from '../components/AtencionMedica';
-
+import { Registro } from '../components/Registro';
 import { About } from "../components/About";
-import { loginSincrono } from "../actions/actionLogin";
-import { PublicRouter } from "./PublicRouter";
-import { PrivateRouter } from "./PrivateRouter";
-import { AuthRouter } from "./AuthRouter";
-import {  getAuth,onAuthStateChanged } from "firebase/auth";
-
-// import Loading from "../components/Loading";
-
+import { DashboardRouter } from "./DashboardRouter";
+import { PrivateRoute } from "./PrivateRoute";
+import { PublicRoute } from "./PublicRoute";
+import {useDispatch} from 'react-redux';
+import { getAuth, onAuthStateChanged } from "@firebase/auth";
+import { loginEmailPassword } from "../actions/actionLogin";
+import Navbar from "../components/Navbar";
+import AtencionMedica from "../components/AtencionMedica";
 
 export default function AppRouter() {
 
-  const auth = getAuth();
-  const [checking, setChecking] = useState(true)
-  const [isLooggedIn, setsIsLoogedIn] = useState(false)
-  const dispatch = useDispatch()
+const dispatch = useDispatch();
 
-    useEffect(() => {
-        onAuthStateChanged(auth, async(user) => {
-            if (user?.uid) {
-                dispatch(loginSincrono(user.uid, user.displayName))
-                setsIsLoogedIn(true)
-                // dispatch(...(user.uid))
-                console.log(user.uid)
-            } else {
-                setsIsLoogedIn(false)
-            }
-            setChecking(false)
-        })
-    }, [dispatch, setChecking])
+const [checking, setChecking] = useState(true);
+const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    if (checking) {
-        // return <Loading />
-    }
+  useEffect(() => {
+     const auth = getAuth();
+     onAuthStateChanged(auth, (user) => {
+      if (user?.uid) {
+        dispatch(loginEmailPassword(user.uid,user.displayName));
+        setIsLoggedIn(true);
+      } else {
+        setIsLoggedIn(false);
+      }
+      setChecking(false); 
+    });
+  }, [dispatch, setChecking,  setIsLoggedIn])
 
+  if(checking){
+    return(
+      <div style={{display: 'flex', margin:"15rem 30rem",}}>
+      <Puff stroke="#98ff98" strokeOpacity={.125} speed={.75} />
+       <h1>Cargando....</h1>
+         
+</div>
+    )
+  }
 
-    return (
-         <Router>
-            <div>
-                <Switch>
-                    <PublicRouter
-                        path="/auth"
-                        component={AuthRouter}
-                        isAuthenticated ={isLooggedIn}
-                    />
-                    <PublicRouter
-                        path="/about"
-                        component={About}
-                        isAuthenticated ={isLooggedIn}
-                    />
-
-                    <PublicRouter
-                        path="/login"
-                        component={Login}
-                        isAuthenticated ={isLooggedIn}
-                    />
-
-                    <PublicRouter
-                        path="/registro"
-                        component={Registro}
-                        isAuthenticated ={isLooggedIn}
-                    />
-
-                    {/* <PrivateRouter
-                        exact
-                        path="/"
-                        component={}
-                        isAuthenticated ={isLooggedIn}
-                    /> */}
-
-                    <Redirect to="/auth/about" />
-                </Switch>
-            </div>
-        </Router>
+  return (
+    <Router>
+      <div>
+      <Navbar />   
+        <Switch>
+        <PublicRoute
+            exact
+            path="/"
+            component={About} 
+            isAuthenticated={ isLoggedIn }
+            />
+            
+          <PublicRoute
+            exact
+            path="/login"
+            component={Login}
+            isAuthenticated={ isLoggedIn }
+          />
+ 
+          <PublicRoute
+            exact
+            path="/registro"
+            component={Registro} 
+            isAuthenticated={ isLoggedIn }
+            />
+              {/* <PublicRoute
+            exact
+            path="/registro"
+            component={AtencionMedica} 
+            isAuthenticated={ isLoggedIn }
+            /> */}
+          <PrivateRoute
+            path="/auth"
+            component={DashboardRouter}
+           isAuthenticated={ isLoggedIn }
+          />
+        </Switch>
+      </div>
+    </Router>
   );
 }

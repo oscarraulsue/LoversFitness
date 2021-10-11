@@ -11,7 +11,9 @@ export const loginReducer = (state = {}, action) => {
             email2: action.payload.email,
             password: action.payload.password
         }
+        case types.logout:
 
+        return []
         default:
           return state;
     }

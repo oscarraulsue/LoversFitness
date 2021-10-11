@@ -1,22 +1,34 @@
-import { AppBar, List , makeStyles,Drawer,Toolbar, IconButton, Divider } from '@material-ui/core';
-import React from 'react'
-import {Link, animateScroll as scroll} from "react-scroll"
-import PermIdentityTwoToneIcon from '@material-ui/icons/PermIdentityTwoTone';
-import EmojiObjectsTwoToneIcon from '@material-ui/icons/EmojiObjectsTwoTone';
-import WorkTwoToneIcon from '@material-ui/icons/WorkTwoTone';
-import InsertCommentTwoToneIcon from '@material-ui/icons/InsertCommentTwoTone';
+import { List , makeStyles,Drawer,Toolbar, IconButton, Divider } from '@material-ui/core';
+import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import MenuTwoToneIcon from '@material-ui/icons/MenuTwoTone';
 import {useState} from "react"
 import CancelIcon from '@material-ui/icons/Cancel';
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { getAuth, onAuthStateChanged } from '@firebase/auth';
+import { logout } from '../actions/actionLogin';
+
 
 
 const Navbar = () => {
 
-    // const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    const [isLoggedIn, setIsLoggedIn] = useState(true);
        
     const classes = useStyles();
     const [open, setOpen] = useState(false);
+
+    useEffect(() => {
+        const auth = getAuth();
+        onAuthStateChanged(auth, (user) => {
+            if (user?.uid) {
+                setIsLoggedIn(true);
+            } else {
+                setIsLoggedIn(false);
+            }
+
+        });
+    }, [setIsLoggedIn])
 
     return (
         <>
@@ -24,18 +36,23 @@ const Navbar = () => {
          
          <Toolbar className={classes.toolbar}>
          <div>
-         <a href= "about">
-          <img src="" className={classes.logo} alt= "Logo"/>
-         </a>
+         <Link 
+         to= "/"
+         style = {{position: "absolute"}}
+         >
+          <img className={classes.log} src="https://res.cloudinary.com/dky22nhv5/image/upload/v1633957061/Imagen1_fe0xmp.png"  alt= "Ir a facebook love fitness"/>
+         </Link>
+         <div style={{marginLeft: "120px"}}>
          <a href= "about">
           <img src="https://res.cloudinary.com/dky22nhv5/image/upload/v1632679406/facebook_gqfii0.png" className={classes.logo} alt= "Logo"/>
          </a>
          <a href= "about">
           <img src="https://res.cloudinary.com/dky22nhv5/image/upload/v1632679407/inst_yc3kha.png" className={classes.logo} alt= "Logo"/>
          </a>
-         <a href= "about">
-          <img src="https://res.cloudinary.com/dky22nhv5/image/upload/v1632679408/tw_ohxaz4.png" className={classes.logo} alt= "Logo"/>
+         <a style={{marginLeft:"-2px"}} href= "about">
+          <img src="https://res.cloudinary.com/dky22nhv5/image/upload/v1633958065/Imagen2_wmxycr.png" className={classes.logo} alt= "Logo"/>
          </a>
+         </div>
          </div>
          <List edge="end" className={classes.list}>
 
@@ -43,16 +60,15 @@ const Navbar = () => {
                 className={classes.labelMenu}
                 >Menu
                 <ul>
-								<li><a href="">Submenu1</a></li>
-								<li><a href="">Submenu2</a></li>
-								<li><a href="">Submenu3</a></li>
-								<li><a href="">Submenu4</a></li>
+								<li><Link>Programas</Link></li>
+								<li><Link>Coaches</Link></li>
+								<li><Link to = "/auth/atencionmedica">Salud</Link></li>
 							</ul>
                 </label>
 
 
                 <Link 
-                 to ="/atencionmedica"
+                 to ="/auth/atencionmedica"
                  spy ={true} 
                  smooth={true} 
                  duration={500}
@@ -72,14 +88,22 @@ const Navbar = () => {
                  duration={500}
                   offset={-64}>Blog</Link>
 
-              <Link to="/login"   
-                spy ={true} 
-                ActiveClass = 'active' 
-                smooth={true} 
-                duration={500}
-                offset={-64}
-                // onClick={() =>dispatch(Login())}
-                >Iniciar sesión</Link>
+{
+                            isLoggedIn
+                                ?
+                                <Link
+                                    onClick={() => { dispatch(logout()) }}
+                                    to="/"
+                                    spy={true}
+                                    smooth={true}
+                                >Cerrar sesión</Link>
+                                :
+                                <Link
+                                    to="/login"
+                                    spy={true}
+                                    smooth={true}
+                                >Iniciar sesión</Link>
+                        }
                 
          </List>
          <IconButton edge="end" className={classes.listbottom} onClick={()=>setOpen(true)}>
@@ -96,7 +120,6 @@ const Navbar = () => {
           <Link 
                  to ="/"
                  spy ={true} 
-                 ActiveClass = 'active' 
                  smooth={true} 
                  duration={500}
                   offset={-64}>Menu</Link>
@@ -104,7 +127,6 @@ const Navbar = () => {
                 <Link 
                  to ="/atencionmedica"
                  spy ={true} 
-                 ActiveClass = 'active' 
                  smooth={true} 
                  duration={500}
                   offset={-64}>Tienda</Link>
@@ -112,7 +134,6 @@ const Navbar = () => {
                 <Link 
                  to ="/atencionmedica"
                  spy ={true} 
-                 ActiveClass = 'active' 
                  smooth={true} 
                  duration={500}
                   offset={-64}>Contacto</Link>
@@ -120,17 +141,25 @@ const Navbar = () => {
                 <Link 
                  to ="/"
                  spy ={true} 
-                 ActiveClass = 'active' 
                  smooth={true} 
                  duration={500}
                   offset={-64}>Blog</Link>
-                {/* <Link 
-                 to ="/login" 
-                 spy ={true} 
-                 ActiveClass = 'active' 
-                 smooth={true} 
-                 duration={500}
-                 offset={-64}>Iniciar sesión</Link> */}
+                        {
+                            isLoggedIn
+                                ?
+                                <Link
+                                    onClick={() => { dispatch(logout()) }}
+                                    to="/"
+                                    spy={true}
+                                    smooth={true}
+                                >Cerrar sesión</Link>
+                                :
+                                <Link
+                                    to="/login"
+                                    spy={true}
+                                    smooth={true}
+                                >Iniciar sesión</Link>
+                        }
  
           </Drawer> 
         </>  
@@ -139,6 +168,10 @@ const Navbar = () => {
 
 
 const useStyles = makeStyles((theme) =>({
+    log:{
+        width: "100px", 
+        height: "100px"
+    },
     labelMenu:{
         backgroundColor:"#000",
         color:"#fff",
@@ -183,13 +216,11 @@ const useStyles = makeStyles((theme) =>({
         display: "flex",
         backgroundColor:"#002",
     
-        "& img":{
-            height: '3rem',
-            width: "8rem",
-        }
     },
-    Logo:{
-         objectFit: "contain",
+    logo:{
+         width: "50px",
+         height: "50px",
+         marginLeft: "10px",
         "&:hover":{
             cursor:'pointer',
         }
