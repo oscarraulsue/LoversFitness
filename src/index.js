@@ -8,9 +8,10 @@ import { RegistroApp } from './RegistroApp';
 import { store } from './store/store';
 
 
+
 ReactDOM.render(
   <Provider store={store}>
-    <RegistroApp />
+  <RegistroApp />
   </Provider>,
 
   document.getElementById('root')
