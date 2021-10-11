@@ -15,26 +15,23 @@ const useStyles = makeStyles({
 
 export default function Item({item, handleAddItemToCart }) {
     const classes = useStyles();
+
+    console.log(item)
   return (
     <Card className={classes.root}>
       <CardActionArea>
-        <CardMedia
-          component="img"
-          alt={item.title}
-          height="200"
-          image={item.image}
-          title={item.title}
-        />
+        <img src={item} alt="" width="300px" height="300px" />
+          
         <CardContent>
-          {item.description}
+          {/* {item.description} */}
         </CardContent>
       </CardActionArea>
       <CardActions>
       <Button size="small" color="secondary">
-          $ {item.price}
+          {/* $ {item.price} */}
         </Button>
         <Button size="small" color="primary" onClick = { () => handleAddItemToCart(item)}>
-          Add to Cart
+          Agregar al Carrito
         </Button>
       </CardActions>
     </Card>

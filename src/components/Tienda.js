@@ -8,8 +8,8 @@ import ProductList from './ProductList';
 
 export const Tienda = () => {
 
-    const Productos = async() => 
-    await fetch("http://localhost:4002/productos/").json();
+    const Productos = async () => 
+    await (await fetch("http://localhost:4003/productos")).json();
 
     const { isLoading, error, data } = useQuery("productos", Productos);
     const [productoOpen, setProductoOpen] = useState(false);
@@ -70,11 +70,13 @@ export const Tienda = () => {
           />
         </Drawer>
         <Grid container spacing={3}>
-          {data?.map((item) => (
-            <Grid key={item.id} item xs={8} sm={6}>
-              <Item item={item} handleAddItemToCart={handleAddItemToCart} />
-            </Grid>
-          ))}
+          {
+              data?.map((item) => (
+                <Grid key={item.id} item xs={8} sm={6}>
+                  <Item item={item.poster} handleAddItemToCart={handleAddItemToCart} />
+                </Grid>
+              ))
+          }
         </Grid>
       </div>
     </>
