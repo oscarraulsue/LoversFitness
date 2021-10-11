@@ -38,11 +38,11 @@ const Navbar = () => {
          <div>
          <Link 
          to= "/"
-         style = {{position: "absolute"}}
+         style = {{position: "absolute", marginLeft:"-20px", marginTop:"-5px"}}
          >
           <img className={classes.log} src="https://res.cloudinary.com/dky22nhv5/image/upload/v1633957061/Imagen1_fe0xmp.png"  alt= "Ir a facebook love fitness"/>
          </Link>
-         <div style={{marginLeft: "120px"}}>
+         <div style={{marginLeft: "140px"}}>
          <a href= "about">
           <img src="https://res.cloudinary.com/dky22nhv5/image/upload/v1632679406/facebook_gqfii0.png" className={classes.logo} alt= "Logo"/>
          </a>
@@ -56,19 +56,23 @@ const Navbar = () => {
          </div>
          <List edge="end" className={classes.list}>
 
-                <label 
+                <Link 
                 className={classes.labelMenu}
+                
                 >Menu
-                <ul>
-								<li><Link>Programas</Link></li>
+                
+                <ul className={classes.ul}>
+                                <li style={{backgroundColor:"#2B2F3A", height: "13.5px", width:"200px", position:"absolute"}}><Link></Link></li>
+								<li style={{marginTop: "17px"}}><Link>Programas</Link></li>
 								<li><Link>Coaches</Link></li>
 								<li><Link to = "/auth/atencionmedica">Salud</Link></li>
 							</ul>
-                </label>
+                </Link>
 
 
                 <Link 
-                 to ="/auth/atencionmedica"
+                 to ="/tienda"
+                 className={classes.itemMenu}
                  spy ={true} 
                  smooth={true} 
                  duration={500}
@@ -76,6 +80,7 @@ const Navbar = () => {
       
                 <Link 
                  to ="/atencionmedica"
+                 className={classes.itemMenu}
                  spy ={true} 
                  smooth={true} 
                  duration={500}
@@ -83,6 +88,7 @@ const Navbar = () => {
 
                 <Link 
                  to ="/"
+                 className={classes.itemMenu}
                  spy ={true} 
                  smooth={true} 
                  duration={500}
@@ -93,6 +99,7 @@ const Navbar = () => {
                                 ?
                                 <Link
                                     onClick={() => { dispatch(logout()) }}
+                                    className={classes.itemMenu}
                                     to="/"
                                     spy={true}
                                     smooth={true}
@@ -100,6 +107,7 @@ const Navbar = () => {
                                 :
                                 <Link
                                     to="/login"
+                                    className={classes.itemMenu}
                                     spy={true}
                                     smooth={true}
                                 >Iniciar sesión</Link>
@@ -169,44 +177,50 @@ const Navbar = () => {
 
 const useStyles = makeStyles((theme) =>({
     log:{
-        width: "100px", 
-        height: "100px"
+        width: "150px", 
+        height: "88px"
     },
+
     labelMenu:{
-        backgroundColor:"#000",
-        color:"#fff",
-        textDecoration:"none",
-        padding:"10px 12px",
-        display:"block",
-        "&:hover":{
+        color: "#fff",
+        fontSize: "1.4rem",
+        fontWeight: 'bold',
+        marginLeft: theme.spacing(3),
+        textDecoration: "none",
+            "&:hover":{
+                cursor: "pointer",
+                color: "#35669F",
+                padding: "0 5px",
+                borderBottom: "2px solid #35669F",
+                borderLeft: "2px solid #35669F",
+                boxShadow: "-2px 2px 5px #35669F",
+                backgroundColor: "#22D9DB",
             "& ul":{
 				display:"block"
 
         }
     },
         "& ul":{
-            
+                top: "44px",
+                left: "-30px",
 				display:"none",
 				position:"absolute",
 				minWidth:"140px",
-                backgroundColor:"#000",
-                color:"#fff",
+                backgroundColor:"#0c2f5983",
                 textDecoration:"none",
-                padding:"10px 12px",
-               
+                listStyle: "none",
+                padding:"0 20px 10px 0px",
+                color:"white"
         },
         "& li":{
             minWidth:"140px",
-            backgroundColor:"#000",
-            color:"#fff",
             textDecoration:"none",
-            padding:"10px 12px",
-           
+
     }
     },
 
     root:{
-        backgroundColor: "#FFFF",
+        backgroundColor: "#2B2F3A",
         top: 0,
         left: 0,
         right: 0,
@@ -214,13 +228,13 @@ const useStyles = makeStyles((theme) =>({
     },
     toolbar: {
         display: "flex",
-        backgroundColor:"#002",
+        backgroundColor:"#2B2F3A",
     
     },
     logo:{
          width: "50px",
          height: "50px",
-         marginLeft: "10px",
+         marginLeft: "15px",
         "&:hover":{
             cursor:'pointer',
         }
@@ -230,23 +244,6 @@ const useStyles = makeStyles((theme) =>({
        display:"flex",
        margin: "auto",
        marginRight:"0", 
-        [theme.breakpoints.down("sm")]: {
-            display:"none"
-        },
-        "& a":{
-            color: "#fff",
-            fontSize: "1.4rem",
-            fontWeight: 'bold',
-            marginLeft: theme.spacing(3)
-        },
-        "& a:hover": {
-            cursor: "pointer",
-            color: "tomato",
-            paddingLeft: "5px",
-            borderBottom: "2px solid tomato",
-            borderLeft: "2px solid tomato",
-            boxShadow: "-2px 2px 5px tomato"
-        }
     },
     listbottom: {
         display: "none",
@@ -258,6 +255,24 @@ const useStyles = makeStyles((theme) =>({
             right: 10,
         }
     },
+   itemMenu:{
+        color: "#fff",
+        fontSize: "1.4rem",
+        fontWeight: 'bold',
+        marginLeft: theme.spacing(3),
+        textDecoration: "none",
+        "&:hover":{
+            cursor: "pointer",
+            color: "#35669F",
+            padding: "0 5px",
+    
+            borderBottom: "2px solid #35669F",
+            borderLeft: "2px solid #35669F",
+            boxShadow: "-2px 2px 5px #35669F",
+            backgroundColor: "#22D9DB"
+        }
+    },
+ 
     menul2:{
         color: "blue",
         width: "30vw",

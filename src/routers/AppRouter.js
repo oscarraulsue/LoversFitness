@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import {Puff} from 'react-loading-icons'
 import {
   BrowserRouter as Router,
-  Switch
+  Switch,
+  Route
 } from "react-router-dom";
 import Login from '../components/Login';
 import { Registro } from '../components/Registro';
@@ -14,7 +15,7 @@ import {useDispatch} from 'react-redux';
 import { getAuth, onAuthStateChanged } from "@firebase/auth";
 import { loginEmailPassword } from "../actions/actionLogin";
 import Navbar from "../components/Navbar";
-import AtencionMedica from "../components/AtencionMedica";
+import Tienda from "../components/Tienda";
 
 export default function AppRouter() {
 
@@ -71,12 +72,12 @@ const [isLoggedIn, setIsLoggedIn] = useState(false);
             component={Registro} 
             isAuthenticated={ isLoggedIn }
             />
-              {/* <PublicRoute
+          <Route
             exact
-            path="/registro"
-            component={AtencionMedica} 
+            path="/tienda"
+            component={Tienda} 
             isAuthenticated={ isLoggedIn }
-            /> */}
+            />
           <PrivateRoute
             path="/auth"
             component={DashboardRouter}
