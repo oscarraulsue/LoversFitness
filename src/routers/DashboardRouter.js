@@ -1,7 +1,7 @@
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom';
 import AtencionMedica from '../components/AtencionMedica';
-import { About } from "../components/About";
+import About from "../components/About";
 import MedicinaDeportiva from '../components/MedicinaDeportiva';
 import SupportAdmin from '../supportadmin/SupportAdmin';
 import Nutricionista from '../components/Nutricionista';

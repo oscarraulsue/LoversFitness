@@ -37,3 +37,52 @@
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
 }
+imagen-portada{
+  width:"100%";
+}
+
+.container_coaches{
+  display: flex;
+}
+.perfil{
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+}
+
+.img_perfil{
+  width: 100px;
+  height: 100px;
+}
+
+*{
+  background-color: #2B2F3A;
+  color: #2DC7DE ;
+}
+.App{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container_portada{
+  width: 100vh;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+ 
+}
+.imagenes{
+  width: 300px;
+}
+
+
+.imagen_reto{
+  width: 300px;
+  margin: 15PX;
+  
+  
+}
+
+.titulo{margin-top: 20px;}

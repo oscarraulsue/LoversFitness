@@ -8,8 +8,7 @@ import ProductList from './ProductList';
 
 export const Tienda = () => {
 
-    const Productos = async() => 
-    await fetch("http://localhost:4002/productos/").json();
+    const Productos = [];
 
     const { isLoading, error, data } = useQuery("productos", Productos);
     const [productoOpen, setProductoOpen] = useState(false);
