@@ -1,14 +1,15 @@
 import React from 'react';
 // import Navbar from './components/Navbar';
-import { ProgramaRetos } from './components/ProgramaRetos';
+import App from './components/App';
 // import AppRouter from './routers/AppRouter';
 
 export const RegistroApp = () => {
     return (
         <div>
             {/* <Navbar /> */}
-            <ProgramaRetos />
+            {/* <ProgramaRetos /> */}
             {/* <AppRouter/> */}
+            <App />
         </div>
     )
 }
