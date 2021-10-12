@@ -36,7 +36,7 @@ const Navbar = () => {
          <List edge="end" className={classes.list}>
 
                 <Link 
-                 to ="/"
+                to="/"
                  spy ={true} 
                  ActiveClass = 'active' 
                  smooth={true} 
@@ -44,7 +44,7 @@ const Navbar = () => {
                   offset={-64}>Menu</Link>
 
                 <Link 
-                 to ="/"
+                 to ="/tienda"
                  spy ={true} 
                  ActiveClass = 'active' 
                  smooth={true} 
@@ -52,7 +52,7 @@ const Navbar = () => {
                   offset={-64}>Tienda</Link>
       
                 <Link 
-                 to ="/"
+                 to ="/contacto"
                  spy ={true} 
                  ActiveClass = 'active' 
                  smooth={true} 
@@ -60,14 +60,14 @@ const Navbar = () => {
                   offset={-64}>Contacto</Link>
 
                 <Link 
-                 to ="/"
+                 to ="/block"
                  spy ={true} 
                  ActiveClass = 'active' 
                  smooth={true} 
                  duration={500}
                   offset={-64}>Blog</Link>
               <Link 
-                 to ="/" 
+                 to ="/login" 
                  spy ={true} 
                  ActiveClass = 'active' 
                  smooth={true} 

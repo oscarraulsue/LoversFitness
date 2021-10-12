@@ -5,6 +5,9 @@ import {
   Route,
 } from "react-router-dom";
 import Login from '../components/Login';
+import PortadaPrincipal from "../components/PortadaPrincipal";
+import { ProgramaRetos } from "../components/ProgramaRetos";
+import Programas from "../components/Programas";
 import { Cardio } from "../components/programas/Cardio";
 import { Dance } from "../components/programas/Dance";
 import { Kickboxing } from "../components/programas/Kickboxing";
@@ -17,7 +20,7 @@ export default function AppRouter() {
   return (
     <Router>
         <Switch>
-          <Route exact path="/"  component={Login}/>
+          <Route exact path="/login"  component={Login}/>
           <Route exact path="/registro"  component={Registro}/>
           <Route exact path="/cardio" component={Cardio} />
           <Route exact path="/dance" component={Dance} />
@@ -25,6 +28,10 @@ export default function AppRouter() {
           <Route exact path="/meditacion" component={Meditacion} />
           <Route exact path="/pilates" component={Pilates} />
           <Route exact path="/yoga" component={Yoga} />
+          <Route exact path="/programas" component={Programas} />
+          <Route exact path="/" component={PortadaPrincipal} />
+          <Route exact path="/programaRetos" component={ProgramaRetos} />
+
         </Switch>
     </Router>
   );
