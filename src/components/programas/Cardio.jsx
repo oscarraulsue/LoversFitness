@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { useState, useEffect} from 'react'
 import PintarCard from './PintarCard'
+import ReactPlayer from 'react-player'
 
 const url ="https://api-proyectofinal.herokuapp.com/cardio"
 
@@ -29,12 +30,16 @@ export const Cardio = () => {
             <div className="cardio">
                 {
                     cardio.map(item=>(
-                        <PintarCard
-                        style={{ display: 'flex',margin: '40px auto ',alignItems: 'center'}}
-                            url={item.video}
-                            controls= {true}
-                            playing= {false}
+                        <PintarCard 
+                        key={item.titulo}
+                        card={item}
                         />
+                //         <ReactPlayer
+                // style={{ display: 'flex',margin: '40px auto ',alignItems: 'center'}}
+                //     url={item.video}
+                //     controls= {true}
+                //     playing= {false}
+                // />
                     ))
                 }
             </div>
