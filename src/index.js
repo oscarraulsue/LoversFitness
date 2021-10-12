@@ -9,6 +9,7 @@ import { store } from './store/store';
 import './styles/app.css'
 import './styles/coaches.css'
 import './styles/pintarCard.css'
+import './styles/programas.css'
 
 
 
