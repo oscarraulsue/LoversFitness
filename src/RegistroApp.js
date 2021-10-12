@@ -2,6 +2,7 @@ import React from 'react';
 // import Navbar from './components/Navbar';
 // import App from './components/App';
 import { Cardio } from './components/programas/Cardio';
+import { Dance } from './components/programas/Dance';
 // import AppRouter from './routers/AppRouter';
 
 export const RegistroApp = () => {
@@ -11,7 +12,8 @@ export const RegistroApp = () => {
             {/* <ProgramaRetos /> */}
             {/* <AppRouter/> */}
             {/* <App /> */}
-            <Cardio />
+            {/* <Cardio /> */}
+            <Dance />
         </div>
     )
 }

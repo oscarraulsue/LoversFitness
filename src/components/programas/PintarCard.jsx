@@ -5,7 +5,7 @@ const PintarCard = (props) => {
 const{
     id,
     portada,
-    titulo,
+    titulo, 
     video
 }=props.card
 console.log("soy el video",video)
@@ -19,10 +19,12 @@ console.log("soy el video",video)
                     url={video}
                     controls= {true}
                     playing= {false}
+                    muted={false}
                     width='300px'
                     height='200px'
-                    origin
-                    // poster={portada}
+                    // origin="https://api-proyectofinal.herokuapp.com/cardio"
+                    // loading="lazy"
+                    
                 />
             </div>
             

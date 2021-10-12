@@ -2,7 +2,6 @@ import React from 'react'
 import axios from 'axios'
 import { useState, useEffect} from 'react'
 import PintarCard from './PintarCard'
-import ReactPlayer from 'react-player'
 
 const url ="https://api-proyectofinal.herokuapp.com/cardio"
 
@@ -26,20 +25,14 @@ export const Cardio = () => {
     console.log("yo soy cardio",cardio)
     
     return (
-        <div className="container_cardio">
-            <div className="cardio">
+        <div className="container_productos">
+            <div className="productos_pintar">
                 {
                     cardio.map(item=>(
                         <PintarCard 
                         key={item.titulo}
                         card={item}
                         />
-                //         <ReactPlayer
-                // style={{ display: 'flex',margin: '40px auto ',alignItems: 'center'}}
-                //     url={item.video}
-                //     controls= {true}
-                //     playing= {false}
-                // />
                     ))
                 }
             </div>
