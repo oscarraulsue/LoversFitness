@@ -3,6 +3,9 @@ import React from 'react';
 // import App from './components/App';
 import { Cardio } from './components/programas/Cardio';
 import { Dance } from './components/programas/Dance';
+import { Kickboxing } from './components/programas/Kickboxing';
+import { Meditacion } from './components/programas/Meditacion';
+
 // import AppRouter from './routers/AppRouter';
 
 export const RegistroApp = () => {
@@ -13,7 +16,10 @@ export const RegistroApp = () => {
             {/* <AppRouter/> */}
             {/* <App /> */}
             {/* <Cardio /> */}
-            <Dance />
+            {/* <Dance /> */}
+            {/* <Kickboxing /> */}
+            <Meditacion />
+            
         </div>
     )
 }
