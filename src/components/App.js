@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Coaches } from './Coaches';
 
+
 function App () {
   const [challenges, setChallenges] = useState([])
   const [coverPage, setCoverPage] = useState([])
@@ -49,6 +50,7 @@ function App () {
              </div>
              <h2 className="titulo">Coaches</h2>
              <Coaches />
+            
         </div>
          );
 }

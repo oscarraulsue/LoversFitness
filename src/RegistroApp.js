@@ -1,6 +1,7 @@
 import React from 'react';
 // import Navbar from './components/Navbar';
-import App from './components/App';
+// import App from './components/App';
+import { Cardio } from './components/programas/Cardio';
 // import AppRouter from './routers/AppRouter';
 
 export const RegistroApp = () => {
@@ -9,7 +10,8 @@ export const RegistroApp = () => {
             {/* <Navbar /> */}
             {/* <ProgramaRetos /> */}
             {/* <AppRouter/> */}
-            <App />
+            {/* <App /> */}
+            <Cardio />
         </div>
     )
 }
