@@ -14,8 +14,11 @@ import { PublicRouter } from "./PublicRouter";
 import { PrivateRouter } from "./PrivateRouter";
 import { AuthRouter } from "./AuthRouter";
 import {  getAuth,onAuthStateChanged } from "firebase/auth";
-import Login from "../components/Login";
-import { Registro } from "../components/Registro";
+// import Login from "../components/Login";
+// import { Registro } from "../components/Registro";
+import { Telemedicina } from "../components/Telemedicina";
+import { AtencionMedica } from "../components/AtencionMedica";
+import { AtencionNutricion } from "../components/AtencionNutricion";
 // import Loading from "../components/Loading";
 
 
@@ -55,11 +58,24 @@ export default function AppRouter() {
                         isAuthenticated ={isLooggedIn}
                     />
                     <PublicRouter
-                        path="/about"
-                        component={About}
+                        path="/telemedicina"
+                        component={Telemedicina}
                         isAuthenticated ={isLooggedIn}
                     />
 
+                    <PublicRouter
+                        path="/atencionmedica"
+                        component={AtencionMedica}
+                        isAuthenticated ={isLooggedIn}
+                    />
+
+                    <PublicRouter
+                        path="/atencionnutricion"
+                        component={AtencionNutricion}
+                        isAuthenticated ={isLooggedIn}
+                    />
+
+{/* 
                     <PublicRouter
                         path="/login"
                         component={Login}
@@ -70,7 +86,7 @@ export default function AppRouter() {
                         path="/registro"
                         component={Registro}
                         isAuthenticated ={isLooggedIn}
-                    />
+                    /> */}
 
                     
 

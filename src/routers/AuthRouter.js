@@ -1,8 +1,9 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { About } from '../components/About';
-import Login from '../components/Login';
-import { Registro } from '../components/Registro';
+// import { About } from '../components/About';
+// import Login from '../components/Login';
+// import { Registro } from '../components/Registro';
+import { Telemedicina } from '../components/Telemedicina';
 
 
 export const AuthRouter = () => {
@@ -10,7 +11,7 @@ export const AuthRouter = () => {
         <div className="auth__main">
             <div className="auth__box-container">
                 <Switch>
-                    <Route 
+                    {/* <Route 
                         exact
                         path="/auth/about"
                         component={ About }
@@ -26,9 +27,15 @@ export const AuthRouter = () => {
                         exact
                         path="/auth/registro"
                         component={ Registro }
+                    /> */}
+
+                    <Route 
+                        exact
+                        path="/auth/telemedicina"
+                        component={ Telemedicina }
                     />
 
-                    <Redirect to="/auth/about" />
+                    <Redirect to="/auth/telemedicina" />
 
                 </Switch>
             </div>
