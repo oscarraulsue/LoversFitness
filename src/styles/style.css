@@ -18,3 +18,28 @@ Form{
    margin-left: 40%;
    margin-top: 2%;
 }
+
+/* TELEMEDICINA */
+
+.prin{
+    background-color: #2B2F3A;
+    height: 630px;
+}
+
+.teleme{
+    height: 620px;    
+}
+
+.telede{
+    float: right;
+    margin-top: 100px;
+    margin-right: 100px;
+    color: white;
+}
+
+.teleinn{
+    text-align: right;    
+    margin-top: -400px;
+    margin-right: 100px;
+    color:  white ;
+}
