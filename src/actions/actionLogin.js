@@ -31,7 +31,10 @@ export const loginGoogle = () => {
        
         signInWithPopup(auth,google)
         .then(({user}) => {
-          dispatch(loginSincrono(user.uid,user.displayName), registroChat(user.displayName,user.email, user.uid))
+            console.log(user);
+            console.log(user);
+            console.log(user);
+          dispatch(loginSincrono(user.uid,user.displayName, user.email, user.photoURL), registroChat(user.displayName,user.email, user.uid))
         })
         .catch(e =>{
             console.log(e);
@@ -46,7 +49,7 @@ export const loginFacebook = () => {
        
         signInWithPopup(auth,facebook)
         .then(({user}) => {
-          dispatch(loginSincrono(user.uid,user.displayName))
+          dispatch(loginSincrono(user.uid,user.displayName, user.email, user.photoURL))
         })
         .catch(e =>{
             console.log(e);
@@ -54,14 +57,15 @@ export const loginFacebook = () => {
     }
 }
 
-export const loginSincrono = (id, displayname, email) => {
+export const loginSincrono = (id,displayname, email, photoURL) => {
 
     return{
        type: types.login,
        payload: {
            id,
            displayname,
-           email,
+           photoURL,
+           email
            }
     }
 }

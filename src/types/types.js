@@ -4,4 +4,12 @@ export const types ={
     chat: 'chat',
     about: 'about',
     logout: 'logout',
+    buscar: 'buscar',
+}
+
+export const typesProducto = {
+    register: 'register',
+    list: 'list',
+    edit: 'edit',
+    delete: 'delete'
 }

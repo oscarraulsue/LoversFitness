@@ -15,7 +15,8 @@ import {useDispatch} from 'react-redux';
 import { getAuth, onAuthStateChanged } from "@firebase/auth";
 import { loginEmailPassword } from "../actions/actionLogin";
 import Navbar from "../components/Navbar";
-import Tienda from "../components/Tienda";
+import AppTienda from "../components/AppTienda";
+import { Detalle } from "../components/Detalle";
 
 export default function AppRouter() {
 
@@ -58,7 +59,7 @@ const [isLoggedIn, setIsLoggedIn] = useState(false);
             component={About} 
             isAuthenticated={ isLoggedIn }
             />
-            
+
           <PublicRoute
             exact
             path="/login"
@@ -73,11 +74,9 @@ const [isLoggedIn, setIsLoggedIn] = useState(false);
             isAuthenticated={ isLoggedIn }
             />
           <Route
-            exact
-            path="/tienda"
-            component={Tienda} 
-            isAuthenticated={ isLoggedIn }
-            />
+          exact 
+          path="/auth/detalle"  
+          component={Detalle}/>
           <PrivateRoute
             path="/auth"
             component={DashboardRouter}

@@ -31,7 +31,7 @@ const Navbar = () => {
     }, [setIsLoggedIn])
 
     return (
-        <>
+        <div className= "containerNavbar">
         
          
          <Toolbar className={classes.toolbar}>
@@ -62,16 +62,16 @@ const Navbar = () => {
                 >Menu
                 
                 <ul className={classes.ul}>
-                                <li style={{backgroundColor:"#2B2F3A", height: "13.5px", width:"200px", position:"absolute"}}><Link></Link></li>
+                                <li style={{backgroundColor:"#2B2F3A", height: "13.5px", width:"200px", textDecoration:"none", color:"white", position:"absolute"}}><Link></Link></li>
 								<li style={{marginTop: "17px"}}><Link>Programas</Link></li>
-								<li><Link>Coaches</Link></li>
+								<li><Link style={{textDecoration:"none", color:"white"}}>Coaches</Link></li>
 								<li><Link to = "/auth/atencionmedica">Salud</Link></li>
 							</ul>
                 </Link>
 
 
                 <Link 
-                 to ="/tienda"
+                 to ="/auth/apptienda"
                  className={classes.itemMenu}
                  spy ={true} 
                  smooth={true} 
@@ -170,7 +170,7 @@ const Navbar = () => {
                         }
  
           </Drawer> 
-        </>  
+        </div>  
     )
 }
 

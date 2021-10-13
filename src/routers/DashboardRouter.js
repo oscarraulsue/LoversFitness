@@ -5,6 +5,10 @@ import About from "../components/About";
 import MedicinaDeportiva from '../components/MedicinaDeportiva';
 import SupportAdmin from '../supportadmin/SupportAdmin';
 import Nutricionista from '../components/Nutricionista';
+import AppTienda from '../components/AppTienda';
+import {RegProducto} from '../components/RegProducto';
+import {Editar} from '../components/Editar';
+import MapView from '../components/MapView';
 
 export const DashboardRouter = () => {
     return (
@@ -15,6 +19,10 @@ export const DashboardRouter = () => {
                 <Route exact path="/auth/nutricionista"  component={Nutricionista}/>
                 <Route exact path="/auth/medicinadeportiva"  component={MedicinaDeportiva}/>
                 <Route exact path="/auth/supportadmin"  component={SupportAdmin}/>
+                <Route exact path="/auth/apptienda"  component={AppTienda}/>
+                <Route exact path="/auth/regproducto"  component={RegProducto}/>
+                <Route exact path="/auth/editar"  component={Editar}/>
+                <Route exact path="/auth/map"  component={MapView}/>
                 <Redirect to="/auth" />
             </Switch>
         </div>  
