@@ -51,6 +51,7 @@
   }
 
   .formRegistro{
+    
    background-color: #2b2f3a71;
    width:25vw;
    padding: 2rem;
@@ -65,4 +66,72 @@
     position:"absolute";
     top: -43px;
     left: 82%; 
+  }
+  .containerLogin{
+    
+    background-image: url('https://res.cloudinary.com/dky22nhv5/image/upload/v1634100269/Sin_t%C3%ADtulo-1_m4fhdm.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    height:89.7vh;
+    align-items: center;
+    display: flex;
+    color:#00E0FF;
+    margin: auto;
+    padding: 2rem;
+    font-family: 'Noto Sans Display', sans-serif;
+  }
+  .networks{
+    width: 100px;
+    display: flex;
+ }
+  .networks .google{
+    margin: 0 ;
+    margin-top: -25px ;
+    margin-left:24%;
+    width: 60px;
+    display: flex;
+  }
+  .networks .facebook{
+    
+    margin: 0;
+    margin-top: -25px ;
+    width: 50px;
+    display: flex;
+  }
+  .facebook-icon{
+    width: 46px;
+    cursor: pointer;
+  }
+  .google-icon{
+    width: 50px;
+  }
+  .linkRegistro{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+  }
+  .linkAsesor{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .containerLoginAsesor{
+    
+    background-repeat: no-repeat;
+    background-size: cover; 
+    height:89.4vh;
+    align-items: center;
+    display: flex;
+    color:#00E0FF;
+    margin-top: -3px;
+    margin-left: -3px;
+    padding: 2rem;
+    font-family: 'Noto Sans Display', sans-serif;
   }

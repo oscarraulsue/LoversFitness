@@ -6,6 +6,7 @@ import {
   Route
 } from "react-router-dom";
 import Login from '../components/Login';
+import LoginAsesor from '../components/LoginAsesor';
 import { Registro } from '../components/Registro';
 import About from "../components/About";
 import { DashboardRouter } from "./DashboardRouter";
@@ -13,10 +14,11 @@ import { PrivateRoute } from "./PrivateRoute";
 import { PublicRoute } from "./PublicRoute";
 import {useDispatch} from 'react-redux';
 import { getAuth, onAuthStateChanged } from "@firebase/auth";
-import { loginEmailPassword } from "../actions/actionLogin";
+import { loginEmailPassword, loginSincrono } from "../actions/actionLogin";
 import Navbar from "../components/Navbar";
 import AppTienda from "../components/AppTienda";
 import { Detalle } from "../components/Detalle";
+import { Listar } from "../actions/actionTipoAsesor";
 
 export default function AppRouter() {
 
@@ -29,8 +31,9 @@ const [isLoggedIn, setIsLoggedIn] = useState(false);
      const auth = getAuth();
      onAuthStateChanged(auth, (user) => {
       if (user?.uid) {
-        dispatch(loginEmailPassword(user.uid,user.displayName));
         setIsLoggedIn(true);
+        dispatch(loginSincrono(user.uid,user.displayName, user.email, user.photoURL))
+        dispatch(Listar(user.uid))
       } else {
         setIsLoggedIn(false);
       }
@@ -66,7 +69,12 @@ const [isLoggedIn, setIsLoggedIn] = useState(false);
             component={Login}
             isAuthenticated={ isLoggedIn }
           />
- 
+           <PublicRoute
+            exact
+            path="/loginasesor"
+            component={LoginAsesor}
+            isAuthenticated={ isLoggedIn }
+          />
           <PublicRoute
             exact
             path="/registro"

@@ -1,25 +1,35 @@
 import { getAuth, signInWithEmailAndPassword, signInWithPopup, signOut } from "@firebase/auth";
+import Swal from "sweetalert2";
 import { google, facebook } from "../firebase/firebaseConfig";
 import {types} from "../types/types";
 import { registroChat } from "./actionChat";
+import { NewAsesor } from "./actionTipoAsesor";
 
-
-export const loginEmailPassword = (email,password) =>{
+export const loginEmailPassword = (email,password,tipoAsesor) =>{
     
     return (dispatch) =>{
 
        const auth = getAuth();
         signInWithEmailAndPassword(auth,email,password)
        .then(({user}) =>{
-             dispatch(
-                loginSincrono(user.uid,user.displayName, user.email, user.password),
-                registroChat(user.displayName,user.email, user.uid)
-             ) 
-             console.log('Bienvenid@');
+        console.log(user)
+        if(tipoAsesor){
+            dispatch(NewAsesor(tipoAsesor, user.uid)) 
+           }else{
+            dispatch(loginSincrono(user.uid,user.displayName, user.email, user.photoURL))
+            }
+                
+              console.log('Bienvenid@');
        })
        .catch(e =>{
-           console.log(e);
+            console.log(e);
             console.log('El usuario no existe');
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: '!Algo salió mal!',
+                footer: 'Usuario o Contraseña invalidos'
+            })
        })
     }
 }
@@ -31,9 +41,7 @@ export const loginGoogle = () => {
        
         signInWithPopup(auth,google)
         .then(({user}) => {
-            console.log(user);
-            console.log(user);
-            console.log(user);
+            console.log(user)
           dispatch(loginSincrono(user.uid,user.displayName, user.email, user.photoURL), registroChat(user.displayName,user.email, user.uid))
         })
         .catch(e =>{
@@ -87,4 +95,5 @@ export const logoutSincrono = () => {
        type: types.logout,
    }
 }
+
 

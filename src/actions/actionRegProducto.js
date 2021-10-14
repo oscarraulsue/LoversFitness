@@ -36,7 +36,6 @@ export const deleteSincrono = (id) => {
 
 export const registerProducto = (nom,precio,detPre,color,detProducto,img) => {
     
-    console.log(id)
    return( dispatch) => {
        const newProducto = {
            nom,

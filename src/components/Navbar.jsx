@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 import MenuTwoToneIcon from '@material-ui/icons/MenuTwoTone';
 import {useState} from "react"
 import CancelIcon from '@material-ui/icons/Cancel';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getAuth, onAuthStateChanged } from '@firebase/auth';
 import { logout } from '../actions/actionLogin';
+import { Delete } from '../actions/actionTipoAsesor';
 
 
 
@@ -14,10 +15,26 @@ const Navbar = () => {
 
     const dispatch = useDispatch();
     const [isLoggedIn, setIsLoggedIn] = useState(true);
-       
     const classes = useStyles();
     const [open, setOpen] = useState(false);
+    let idTipo = ""
+    const tipoAsesor = useSelector(state => state.asesor)
+    if(tipoAsesor.tipoAsesor){
+      
+        idTipo = tipoAsesor.tipoAsesor.id
+        console.log(idTipo)
+        }
 
+    const handlelogout = () => {
+        if(idTipo){
+            console.log("entre a eliminar")
+            dispatch(Delete(idTipo))
+          
+        }else{
+            dispatch(logout())
+        }
+    }
+    
     useEffect(() => {
         const auth = getAuth();
         onAuthStateChanged(auth, (user) => {
@@ -98,7 +115,7 @@ const Navbar = () => {
                             isLoggedIn
                                 ?
                                 <Link
-                                    onClick={() => { dispatch(logout()) }}
+                                    onClick={handlelogout}
                                     className={classes.itemMenu}
                                     to="/"
                                     spy={true}

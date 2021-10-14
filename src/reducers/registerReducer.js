@@ -12,8 +12,7 @@ export const registerReducer = (state = {}, action) => {
            foto: action.payload.foto,
            sexo: action.payload.sexo,
         }
-
-        default:
+          default:
           return state;
     }
 }

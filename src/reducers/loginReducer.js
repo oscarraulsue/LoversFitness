@@ -8,8 +8,8 @@ export const loginReducer = (state = {}, action) => {
         return{
             id: action.payload.id,
             name: action.payload.displayname,
-            email2: action.payload.email,
-            password: action.payload.password
+            email: action.payload.email,
+            foto: action.payload.photoURL
         }
         case types.logout:
 

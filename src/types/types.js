@@ -5,6 +5,7 @@ export const types ={
     about: 'about',
     logout: 'logout',
     buscar: 'buscar',
+    asesor: "asesor"
 }
 
 export const typesProducto = {

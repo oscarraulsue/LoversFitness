@@ -97,7 +97,7 @@ export const Registro = () => {
 
                 <Button
                     onClick={handlePictureClick}
-                    style={{ margin: '20px 28%', color: 'white' }}
+                    style={{ margin: '20px 27%', color: 'white', width:"118px" }}
                     variant="info"
                     type="button">
                     {imagenText}

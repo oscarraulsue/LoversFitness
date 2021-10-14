@@ -17,28 +17,10 @@ function Login() {
     })
 
     const {email,password} = values;
- 
 
-
-        // const peticionDelete =  () => {
-        //     console.log("hola sientre")
-        //     var axios = require('axios');
-          
-        // var config = {
-        //     method: 'delete',
-        //     url: 'https://api.chatengine.io/users/132250',
-        //     headers: {
-        //         'PRIVATE-KEY': '{{9cd8488d-13cc-4d3a-8ecf-ee89a5690313}}'
-        //     },
-        //      };
-        
-        // axios(config)
-                
-        // }
     const handleLogin = (e) => {
        e.preventDefault();
        dispatch(loginEmailPassword(email,password));
-    console.log(loginEmailPassword)
     }
 
 
@@ -52,7 +34,10 @@ function Login() {
 
 
     return (
-        <Form onSubmit={handleLogin}>
+        <div className="containerLogin">
+        <Form onSubmit={handleLogin}
+         className="formRegistro"
+        >
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Correo</Form.Label>
                 <Form.Control
@@ -72,36 +57,31 @@ function Login() {
                     value={password}
                     onChange={handleInputChange} />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button variant="info" type="submit"  style={{ marginLeft: "28%", marginTop: '10px', color: 'white' }}>
                 Iniciar Sesion
             </Button>
 
-            <Container className="auth__social-networks">
+            <Container className="networks">
                 <Container
-                    className="google-btn"
+                     className="google"
                     onClick={handleGoogle}
-
                 >
-                    <Container className="google-icon-wrapper">
-                        <img className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="google button" />
-                    </Container>
+                           <img className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="google button" />
                     </Container>
 
                     <Container
-                    className="facebook-btn"
+                    className="facebook"
                     onClick={handleFacebook}>
-                    </Container>
-                    <Container className="facebook-icon-wrapper">
-                        <img className="facebook-icon" src="https://res.cloudinary.com/djlvgbuji/image/upload/v1632858497/icon-fb_l9ewqn.jpg" width="50px" height="48px" alt="facebook button" />
+                        <img className="facebook-icon" src="https://res.cloudinary.com/dky22nhv5/image/upload/v1633275260/mndk57d48ruwaxg3oukp.png" alt="facebook button" />
                     </Container>
                 
             </Container>
-            <Link to="/atencionmedica">Registrarse</Link>
-            <Link to="/registro">Registrarse</Link><br />
-            <Link to="/">Página Principal</Link>
+            <Link className="linkRegistro" to="/registro">Registrarse</Link><br />
+            <Link className="linkAsesor" to="/loginasesor">Ingresar como asesor</Link><br />
 
         </Form>
-
+        
+    </div>
     );
 }
 

@@ -6,6 +6,7 @@ import { chatReducer } from '../reducers/chatReducer';
 import { aboutReducer } from '../reducers/aboutReducer';
 import { productoReducer } from '../reducers/productoReducer';
 import { buscarReducer } from '../reducers/buscarReducer';
+import { asesorReducer } from '../reducers/asesorReducer';
 
 const composeEnhancers = (typeof window !== 'undefined' && 
 window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
@@ -16,7 +17,8 @@ const reducers = combineReducers({
     chat: chatReducer,
     about: aboutReducer,
     productos: productoReducer,
-    buscar: buscarReducer
+    buscar: buscarReducer,
+    asesor: asesorReducer
 })
 
 

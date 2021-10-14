@@ -1,5 +1,6 @@
 import { types } from '../types/types';
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import Swal from 'sweetalert2';
 
 
 
@@ -19,6 +20,12 @@ export const registroEmailPasswordNombre = (email, password, name, foto, sexo) =
             })
             .catch(e => {
                 console.log(e);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: '!Algo salió mal!',
+                    footer: 'El usuario ya se encuentra registrado'
+                })
             })
     }
 }
