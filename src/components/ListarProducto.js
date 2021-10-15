@@ -61,7 +61,7 @@ export const ListarProducto = () => {
                                         key={index}
                                         style={{ textDecoration: "none", color: "black" }}
                                         to={{
-                                            pathname: "/auth/detalle",
+                                            pathname: "/detalle",
                                             data: { element }
                                         }}
                                     >

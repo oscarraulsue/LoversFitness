@@ -1,0 +1,17 @@
+.container_pro{
+    margin-top: 40px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 75%;
+    margin: auto;
+    
+    
+}
+
+.imagen_prog{
+    width: 300px;
+    height: 200px;
+}

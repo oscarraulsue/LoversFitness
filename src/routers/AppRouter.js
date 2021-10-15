@@ -5,21 +5,23 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import {Telemedicina} from '../components/Telemedicina';
 import Login from '../components/Login';
 import LoginAsesor from '../components/LoginAsesor';
 import { Registro } from '../components/Registro';
-import About from "../components/About";
+import { ProgramaRetos } from "../components/ProgramaRetos";
 import { DashboardRouter } from "./DashboardRouter";
 import { PrivateRoute } from "./PrivateRoute";
 import { PublicRoute } from "./PublicRoute";
 import {useDispatch} from 'react-redux';
 import { getAuth, onAuthStateChanged } from "@firebase/auth";
-import { loginEmailPassword, loginSincrono } from "../actions/actionLogin";
+import { loginSincrono } from "../actions/actionLogin";
 import Navbar from "../components/Navbar";
 import AppTienda from "../components/AppTienda";
 import { Detalle } from "../components/Detalle";
+import { Coaches } from "../components/Coaches";
 import { Listar } from "../actions/actionTipoAsesor";
-
+import PortadaPrincipal from "../components/PortadaPrincipal";
 export default function AppRouter() {
 
 const dispatch = useDispatch();
@@ -56,12 +58,21 @@ const [isLoggedIn, setIsLoggedIn] = useState(false);
       <div>
       <Navbar />   
         <Switch>
-        <PublicRoute
-            exact
-            path="/"
-            component={About} 
-            isAuthenticated={ isLoggedIn }
-            />
+
+           <PublicRoute
+           exact 
+           path="/" 
+           component={PortadaPrincipal} />
+
+           <Route 
+           exact 
+           path="/programaRetos" 
+           component={ProgramaRetos} />
+
+          <Route 
+           exact 
+           path="/coaches" 
+           component={Coaches} />
 
           <PublicRoute
             exact
@@ -81,9 +92,17 @@ const [isLoggedIn, setIsLoggedIn] = useState(false);
             component={Registro} 
             isAuthenticated={ isLoggedIn }
             />
+            <Route 
+            exact 
+            path="/telemedicina"  
+            component={Telemedicina}/>
+          <Route 
+          exact 
+          path="/apptienda"  
+          component={AppTienda}/>
           <Route
           exact 
-          path="/auth/detalle"  
+          path="/detalle"  
           component={Detalle}/>
           <PrivateRoute
             path="/auth"

@@ -1,8 +1,9 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { Coaches } from './Coaches';
 
 
-function About () {
+function App () {
   const [challenges, setChallenges] = useState([])
   const [coverPage, setCoverPage] = useState([])
 
@@ -30,15 +31,11 @@ function About () {
 
   return (
         <div className="App">
-            < div className="imagen-portada">
-                <img src="https://res.cloudinary.com/dd01p9lb9/image/upload/v1633825295/proyecto_final/image_1_cttuin.png" alt="no disponible" srcset="" />
-            </div>
+           
 
-            <h2 className="titulo">Programas</h2>
+            <h2 className="titulo">Retos</h2>
             <div className="container_portada">
-
-            
-                
+   
             { coverPage.length > 1 && coverPage.map((item) => {
              return (
             <div className="imagenes">
@@ -47,10 +44,11 @@ function About () {
             </div>)
              }) }
              </div>
-             <h2 className="titulo">Coaches</h2>
-
+             
+             
+            
         </div>
          );
 }
 
-export default About;
+export default App;

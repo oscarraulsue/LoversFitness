@@ -9,13 +9,17 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import {Provider} from 'react-redux';
 import { RegistroApp } from './RegistroApp';
 import { store } from './store/store';
-// import  AtencionMedica from './components/AtencionMedica';
+import './styles/app.css'
+import './styles/coaches.css'
+import './styles/pintarCard.css'
+import './styles/programas.css'
+import './styles/poradaPrincipal.css'
+
 
 
 ReactDOM.render(
   <Provider store={store}>
     <RegistroApp />
   </Provider>,
-  // <AtencionMedica />,
   document.getElementById('root')
 );
