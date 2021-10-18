@@ -20,6 +20,7 @@ import CardRetos from '../components/CardRetos';
 import DetalleReto from '../components/DetalleReto';
 import Carrito from '../components/Carrito';
 import { FormDetalle } from '../components/FormDetalle';
+import { FormCompra } from '../components/FormCompra';
 
 
 export const DashboardRouter = () => {
@@ -46,6 +47,8 @@ export const DashboardRouter = () => {
                 <Route exact path="/auth/detallereto" component={DetalleReto}/>
                 <Route exact path="/auth/carrito" component={Carrito}/>
                 <Route exact path="/auth/formdetalle" component={FormDetalle}/>
+                <Route exact path="/auth/formcompra" component={FormCompra}/>
+
                 <Redirect to="/auth" />
             </Switch>
         </div>  

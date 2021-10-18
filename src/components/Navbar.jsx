@@ -184,6 +184,14 @@ const Navbar = () => {
                     hidden={adm? false : true}
                     offset={-64}>Gestion de productos</Link>
                    
+                   <Link
+                    to="/auth/formcompra"
+                    spy={true}
+                    smooth={true}
+                    duration={500}
+                    hidden={adm? false : true}
+                    offset={-64}>Compras Realizadas</Link>
+
                 <Link
                     onClick={handlelogout}
                     to="/"
