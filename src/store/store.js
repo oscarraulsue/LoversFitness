@@ -7,6 +7,10 @@ import { aboutReducer } from '../reducers/aboutReducer';
 import { productoReducer } from '../reducers/productoReducer';
 import { buscarReducer } from '../reducers/buscarReducer';
 import { asesorReducer } from '../reducers/asesorReducer';
+import { activeReducer } from '../reducers/activeReducer';
+import { carritoReducer } from '../reducers/carritoReducer';
+import { comentariosReducer } from '../reducers/comentariosReducer'
+import { retosReducer } from '../reducers/retosReducer'
 
 const composeEnhancers = (typeof window !== 'undefined' && 
 window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
@@ -18,7 +22,11 @@ const reducers = combineReducers({
     about: aboutReducer,
     productos: productoReducer,
     buscar: buscarReducer,
-    asesor: asesorReducer
+    asesor: asesorReducer,
+    active: activeReducer,
+    carrito: carritoReducer,
+    comentarios: comentariosReducer,
+    retos: retosReducer,
 })
 
 

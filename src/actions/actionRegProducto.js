@@ -1,6 +1,6 @@
 import { typesProducto } from "../types/types";
 import { db } from "../firebase/firebaseConfig";
-import { addDoc, updateDoc,collection,deleteDoc,getDocs, doc } from "@firebase/firestore";
+import { addDoc, updateDoc,collection,deleteDoc,getDocs, doc, query, where } from "@firebase/firestore";
 import Swal from 'sweetalert2'
 
 let id = ""
@@ -89,8 +89,7 @@ export const listProducto = () => {
         const querySnapshot = await getDocs(collection(db, "productos"));
         const producto = [];
         querySnapshot.forEach((doc) => {
-            console.log(doc.id)
-            producto.push({
+             producto.push({
                 
                 ...doc.data(id),
                 id:doc.id
@@ -109,10 +108,9 @@ export const list = (productos) => {
 
 export const editar = (nom,precio,detPre,color,detProducto,id) => {
     return async () => {
-        console.log("action")
-        console.log(nom,precio,detPre,color,detProducto,id)
+
         const docRef = await doc(db,"productos", id);
-        console.log(docRef)
+
         // Update the timestamp field with the value from the server
          await updateDoc(docRef, {
             nom,
@@ -149,4 +147,60 @@ export const editSincrono = (producto) => {
         payload: producto
     }
 
+}
+export const cargarActive = (nom, color, detProducto, detPre, precio, img) =>{
+  return( dispatch) => {
+    const newProducto = {
+        nom,
+        precio,
+        detPre,
+        img,
+        color, 
+        detProducto
+       
+    }
+    addDoc(collection(db,"activo"),newProducto)
+    .then(resp => {
+        dispatch(active(newProducto))
+
+    })
+    .catch(error => {
+        console.log(error);
+    })
+}
+}
+export const active = (productos) => {
+  return {
+      type: typesProducto.active,
+      payload: productos
+  }
+}
+export const listAct2 = () => {
+  return async (dispatch) => {
+      const querySnapshot = await getDocs(collection(db, "activo"));
+
+      querySnapshot.forEach((doc) => {
+          
+        dispatch(active(doc.data(id)))
+      });
+
+  }
+}
+export const listAct = () => {
+  return async (dispatch) => {
+      const querySnapshot = await getDocs(collection(db, "activo"));
+ 
+      querySnapshot.forEach((doc) => {
+       dispatch(deleteActve(doc.id))
+      });
+
+  }
+}
+export const deleteActve = (id) =>{
+  return async(dispatch) => {
+
+     deleteDoc(doc(db,"activo",id));
+     
+
+  }
 }

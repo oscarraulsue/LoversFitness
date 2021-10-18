@@ -36,7 +36,7 @@ function Login() {
     return (
         <div className="containerLogin">
         <Form onSubmit={handleLogin}
-         className="formRegistro"
+         className="formLogin"
         >
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Correo</Form.Label>
@@ -61,7 +61,7 @@ function Login() {
                 Iniciar Sesion
             </Button>
 
-            <Container className="networks">
+            <Container className="networks" style={{height: '60px'}}>
                 <Container
                      className="google"
                     onClick={handleGoogle}

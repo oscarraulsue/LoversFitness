@@ -57,6 +57,15 @@
    padding: 2rem;
    margin: auto;
   }
+  
+  .formLogin{
+    
+    background-color: #2b2f3ab4;
+    width:25vw;
+    padding: 2rem;
+    margin: auto;
+   }
+
   .img_perfil{
     width: 100px;
     height: 100px;
@@ -72,7 +81,7 @@
     background-image: url('https://res.cloudinary.com/dky22nhv5/image/upload/v1634100269/Sin_t%C3%ADtulo-1_m4fhdm.jpg');
     background-repeat: no-repeat;
     background-size: cover; 
-    height:89.7vh;
+    height:91vh;
     align-items: center;
     display: flex;
     color:#00E0FF;
@@ -86,24 +95,28 @@
  }
   .networks .google{
     margin: 0 ;
-    margin-top: -25px ;
+    margin-top: -20px ;
     margin-left:24%;
     width: 60px;
     display: flex;
+    height: 60px;
   }
   .networks .facebook{
     
     margin: 0;
     margin-top: -25px ;
-    width: 50px;
+    width: 40px;
+    height: 40px;
     display: flex;
   }
   .facebook-icon{
-    width: 46px;
+    height: 43px;
+    width: 43px;
     cursor: pointer;
   }
   .google-icon{
     width: 50px;
+    margin-top:"0";
   }
   .linkRegistro{
     width: 100%;

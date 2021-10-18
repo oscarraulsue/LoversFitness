@@ -8,7 +8,7 @@ const PortadaPrincipal = () => {
     return (
         <div className="portada_Principal">
             <div className="imagen-portada">
-                <img src="https://res.cloudinary.com/dd01p9lb9/image/upload/v1633825295/proyecto_final/image_1_cttuin.png" alt="no disponible" srcset="" />
+                <img src="https://res.cloudinary.com/dd01p9lb9/image/upload/v1633825295/proyecto_final/image_1_cttuin.png" alt="no disponible" srcSet="" />
             </div>
             <h2 className="titulo_prog">Programas</h2>
             <Programas />

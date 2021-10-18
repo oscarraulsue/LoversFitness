@@ -8,7 +8,7 @@ import { logout } from './actionLogin'
 export const NewAsesor = (tipoAsesor, id) => {
     return async (dispatch) => {
         await addDoc(collection(db, `${id}/asesor/data`), {tipoAsesor});
-        dispatch(addNewAsesor(tipoAsesor))
+        dispatch(Listar(id))
     }
 }
 
@@ -25,9 +25,7 @@ export const Listar = (uid) => {
 }
 export const Delete = (id) => {
     return async (dispatch, getState) => {
-        console.log("elimine")
         const uid = getState().login.id;
-        console.log("elimine",uid,id)
         await deleteDoc(doc(db, `${uid}/asesor/data/`, `${id}`));
             dispatch(logout())
     }

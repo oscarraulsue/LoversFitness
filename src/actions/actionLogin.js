@@ -12,18 +12,15 @@ export const loginEmailPassword = (email,password,tipoAsesor) =>{
        const auth = getAuth();
         signInWithEmailAndPassword(auth,email,password)
        .then(({user}) =>{
-        console.log(user)
         if(tipoAsesor){
             dispatch(NewAsesor(tipoAsesor, user.uid)) 
            }else{
             dispatch(loginSincrono(user.uid,user.displayName, user.email, user.photoURL))
             }
-                
-              console.log('Bienvenid@');
        })
        .catch(e =>{
             console.log(e);
-            console.log('El usuario no existe');
+
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
@@ -41,7 +38,6 @@ export const loginGoogle = () => {
        
         signInWithPopup(auth,google)
         .then(({user}) => {
-            console.log(user)
           dispatch(loginSincrono(user.uid,user.displayName, user.email, user.photoURL), registroChat(user.displayName,user.email, user.uid))
         })
         .catch(e =>{

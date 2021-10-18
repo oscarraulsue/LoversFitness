@@ -36,12 +36,10 @@ const Navbar = () => {
         medico = true
         }
         idTipo = tipoAsesor.tipoAsesor.id
-        console.log(tipoU)
     }
 
     const handlelogout = () => {
         if (idTipo) {
-            console.log("entre a eliminar")
             dispatch(Delete(idTipo))
             setOpen(false)
         } else {
@@ -116,7 +114,7 @@ const Navbar = () => {
                     >Tienda</Link>
 
                     <Link
-                        to="/"
+                        to="/comentarios"
                         className={classes.itemMenu}
                     >Contacto</Link>
 
@@ -156,20 +154,13 @@ const Navbar = () => {
                     
                         alt=""
                         src= {usuario.foto? usuario.foto : "/static/images/avatar/1.jpg"}
-                        style={{ marginLeft: "34%", width: 100, height: 100, cursor: 'pointer' }}
+                        style={{ marginLeft: "38%", width: 100, height: 100, cursor: 'pointer' }}
                     />
                     <div className={classes.menulName}>
                     <label>¡Hola!</label> <br/>
                     <label>{usuario.name}</label>
                     </div>
-                    
-                <Link
-                    to="/"
-                    spy={true}
-                    smooth={true}
-                    duration={500}
-                    offset={-64}>Mi perfil</Link>
-                    
+
                 <Link
                     to="/"
                     spy={true}

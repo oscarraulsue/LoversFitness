@@ -1,5 +1,5 @@
 import React from 'react'
-import App from './App'
+import Retos from './Retos'
 import Navbar from './Navbar'
 import Programas from './Programas'
 
@@ -8,7 +8,7 @@ export const ProgramaRetos = () => {
         <div>
             <h2 className="titulo_prog" text-center>Programas</h2>
             <Programas />
-            <App />
+            <Retos />
         </div>
     )
 }

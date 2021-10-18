@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { Link } from 'react-router-dom';
-import NavbarTienda from './NavbarTienda';
+import { cargarActive, listAct } from '../actions/actionRegProducto';
+
 
 
 export const ListarProducto = () => {
@@ -12,8 +13,10 @@ export const ListarProducto = () => {
     let noFind2 = "";
     const { producto } = useSelector(store => store.productos);
     const { busqueda } = useSelector(store => store.buscar);
-
-
+    const dispatch = useDispatch();
+    const proActivo = useSelector(state => state.active)
+    console.log(proActivo)
+    
     useEffect(() => {
 
         setNoEncontre(document.getElementById("noFindDiv"))
@@ -22,6 +25,8 @@ export const ListarProducto = () => {
         if (!busqueda && busqueda === '') {
             noEncontre.style.display = "none";
         }
+        dispatch(listAct())
+        
     }, [busqueda])
 
     let producto2 = producto;
@@ -44,7 +49,7 @@ export const ListarProducto = () => {
     let prodImp = producto2.slice(0, end)
     return (
         <>
-        <NavbarTienda />
+
             <InfiniteScroll
                 dataLength={prodImp.length}
                 next={() => setEnd(end + 2)}
@@ -56,21 +61,24 @@ export const ListarProducto = () => {
                             (
 
                                 prodImp.map((element, index) => (
-
+                                    
                                     <Link
                                         key={index}
                                         style={{ textDecoration: "none", color: "black" }}
                                         to={{
                                             pathname: "/detalle",
                                             data: { element }
+                                            
                                         }}
+                                      
+                                        onClick={()=>{dispatch(cargarActive(element.nom, element.color, element.detProducto, element.detPre, element.precio, element.img))}}
                                     >
 
                                         <div className="contProducto" >
 
                                             <img className="imgPro" src={element.img[0].response} alt="" />
                                             <h1 className="nomPro">{element.nom}</h1>
-                                            <h1 className="prePro">US$ {element.precio}</h1>
+                                            <h1 className="prePro">$ {element.precio}</h1>
                                             <h1 className="detpPro">{element.detPre}</h1>
 
                                         </div>

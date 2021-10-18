@@ -1,26 +1,55 @@
 import React, {useEffect, useState} from 'react'
 import {Button } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { NewProCarro } from '../actions/actionCarrito';
+
 
 
 
 export const Detalle = (data) => {
+    const proActivo = useSelector(state => state.active)
 
-    let imagen = data.history.location.data.element
-    let imag = imagen.img
-    let imgInit = imag[0];
+    let imagen = " "
+    let imag = ""
+    let imgInit = ""
+    let adm = false
+    let tipoU = ""
+    const dispatch = useDispatch();
+    const [cantidad, setCantidad] = useState(1)
+    const tipoAsesor = useSelector(state => state.asesor)
+
+    if (tipoAsesor.tipoAsesor) {
+        
+        tipoU = tipoAsesor.tipoAsesor.tipo?.tipoAsesor
+        if(tipoU === "administrador") {
+        adm = true
+        }
+    }
+
+    if(proActivo && proActivo.active.img){
+    imagen = proActivo.active
+    imag = imagen.img
+     imgInit = imag[0];
+
+    }
+
     const [selecImg, setSelecImg] = useState(imgInit.response)
     const [picture, setPicture] = useState("")
     const [scrolly, setScrolly] = useState("")
     const [zoom, setZoom] = useState("")
     const [rect, setRect] = useState("")
-  
+
 
 useEffect(() => {
     
      setPicture(document.querySelector('#pictures'))
      setRect(document.querySelector('#rect'))
      setZoom(document.querySelector('#zoom'))
+
+     setSelecImg(imgInit.response)
+ 
+
      if(zoom){
      zoom.style.backgroundImage = "url(" + imgInit.response + ")";
      }
@@ -29,7 +58,7 @@ useEffect(() => {
         
       };
 
-    },[zoom])
+    },[imgInit.response])
 
     const changeImg = (imgSrc) => {
       
@@ -72,7 +101,17 @@ const move = (e) => {
 
     zoom.style.backgroundPosition = "-" + xx + "px -" + yy + "px";
 }
+const hadleless = () => {
+    if(cantidad > 1){
+        setCantidad(cantidad - 1)
+    }
+}
 
+const hadlePlus = () => {
+  
+        setCantidad(cantidad + 1)
+
+}
 
 
 
@@ -118,6 +157,7 @@ const move = (e) => {
                 }}
                 >
                 <Button
+                hidden={adm? false : true}
                 style={{ marginLeft:"150px",width:"330px", height:"50px"  }}
                  variant="success"
                  type="button">
@@ -127,15 +167,27 @@ const move = (e) => {
                 </div>
                 <div className="detalleProducto" style={{marginRight:"60px"}}>
                     <p style={{fontWeight:"bold", fontSize:"22px"}}>{imagen.nom}</p>
-                    <h1 style={{color:"#f0cd05"}}>US$ {imagen.precio}</h1>
+                    <h1 style={{color:"#f0cd05"}}>$ {imagen.precio}</h1>
                     <p>{imagen.detPre}</p>
                     <h1 style={{fontSize:"20px"}}>Color: {imagen.color}</h1>
                     <p>{imagen.detProducto}</p>
                 </div>
                 <div className="detallePrecio">
-                    <h1 style={{color:"#f0cd05"}}>US$ {imagen.precio}</h1>
+                    <h1 style={{color:"#f0cd05"}}>$ {imagen.precio}</h1>
                     <p>{imagen.detPre}</p>
-                    <button>Agregar al Carrito</button>
+                    <button
+                    onClick={hadleless}
+                    >-</button>
+                    <label>{cantidad}</label>
+                    <button
+                    onClick={hadlePlus}
+                    >+</button>
+                    <br/>
+                    <button
+                  onClick={()=>{dispatch(NewProCarro(imagen.nom, imagen.color, imagen.detProducto, imagen.detPre, imagen.precio, imagen.img, cantidad))}}
+                    
+                    >
+                    Agregar al Carrito</button>
                     <button>Comprar ahora</button>
                 </div>
             

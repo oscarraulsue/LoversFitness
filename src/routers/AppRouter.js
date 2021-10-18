@@ -22,6 +22,10 @@ import { Detalle } from "../components/Detalle";
 import { Coaches } from "../components/Coaches";
 import { Listar } from "../actions/actionTipoAsesor";
 import PortadaPrincipal from "../components/PortadaPrincipal";
+import { listAct2 } from "../actions/actionRegProducto";
+import { Comentarios } from "../components/Comentarios";
+import { listRetos } from "../actions/actionRetos";
+import { ListarCar } from "../actions/actionCarrito";
 export default function AppRouter() {
 
 const dispatch = useDispatch();
@@ -31,11 +35,14 @@ const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
      const auth = getAuth();
+     dispatch(listAct2())
      onAuthStateChanged(auth, (user) => {
       if (user?.uid) {
         setIsLoggedIn(true);
         dispatch(loginSincrono(user.uid,user.displayName, user.email, user.photoURL))
         dispatch(Listar(user.uid))
+        dispatch(listRetos())
+        dispatch(ListarCar(user.uid))
       } else {
         setIsLoggedIn(false);
       }
@@ -55,19 +62,26 @@ const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
     <Router>
+        <Navbar />   
       <div>
-      <Navbar />   
+      
         <Switch>
-
+    
            <PublicRoute
            exact 
            path="/" 
+           isAuthenticated={ isLoggedIn }
            component={PortadaPrincipal} />
 
            <Route 
            exact 
            path="/programaRetos" 
            component={ProgramaRetos} />
+
+           <Route 
+           exact 
+           path="/comentarios" 
+           component={Comentarios} />
 
           <Route 
            exact 

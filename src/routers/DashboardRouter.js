@@ -13,6 +13,13 @@ import { Kickboxing } from "../components/programas/Kickboxing";
 import { Meditacion } from "../components/programas/Meditacion";
 import { Pilates } from "../components/programas/Pilates";
 import { Yoga } from "../components/programas/Yoga";
+import RetoAbsmax from '../components/retos/RetoAbsmax';
+import AbsDay1 from '../components/retos/absmax/AbsDay1';
+import RegistroReto from '../components/RegistroReto';
+import CardRetos from '../components/CardRetos';
+import DetalleReto from '../components/DetalleReto';
+import Carrito from '../components/Carrito';
+import { FormDetalle } from '../components/FormDetalle';
 
 
 export const DashboardRouter = () => {
@@ -32,7 +39,13 @@ export const DashboardRouter = () => {
                 <Route exact path="/auth/meditacion" component={Meditacion} />
                 <Route exact path="/auth/pilates" component={Pilates} />
                 <Route exact path="/auth/yoga" component={Yoga} />
-
+                <Route exact path="/auth/retoabsmax" component={RetoAbsmax}/>
+                <Route exact path="/auth/absday1" component={AbsDay1}/>
+                <Route exact path="/auth/registroreto" component={RegistroReto}/>
+                <Route exact path="/auth/cardreto" component={CardRetos}/>
+                <Route exact path="/auth/detallereto" component={DetalleReto}/>
+                <Route exact path="/auth/carrito" component={Carrito}/>
+                <Route exact path="/auth/formdetalle" component={FormDetalle}/>
                 <Redirect to="/auth" />
             </Switch>
         </div>  
