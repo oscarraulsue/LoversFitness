@@ -70,7 +70,7 @@ const Navbar = () => {
                         to="/"
                         style={{ position: "absolute", marginLeft: "-20px", marginTop: "-5px" }}
                     >
-                        <img className={classes.log} src="https://res.cloudinary.com/dky22nhv5/image/upload/v1633957061/Imagen1_fe0xmp.png" alt="Ir a facebook love fitness" />
+                        <img className={classes.log} src="https://res.cloudinary.com/dky22nhv5/image/upload/v1634661975/logo_wpilre.png" alt="Ir a inicio" title="Ir a inicio" />
                     </Link>
                     <div style={{ marginLeft: "140px" }}>
                         <a href="https://m.facebook.com/home.php?ref=wizard&_rdr">
@@ -117,12 +117,6 @@ const Navbar = () => {
                         to="/comentarios"
                         className={classes.itemMenu}
                     >Contacto</Link>
-
-                    <Link
-                        to="/"
-                        className={classes.itemMenu}
-                    >Blog</Link>
-
 
                     <Link
                         hidden={isLoggedIn ? true : false}

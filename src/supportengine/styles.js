@@ -5,7 +5,7 @@ export const styles = {
         // Border
         borderRadius: '50%',
         // Background 
-        backgroundImage: `url(https://res.cloudinary.com/dky22nhv5/image/upload/v1633274972/t7g5e2v1oz82fx4bvjrh.png)`, 
+        backgroundImage: `url(https://res.cloudinary.com/djlvgbuji/image/upload/v1634665158/WhatsApp_Image_2021-10-13_at_4.00.20_PM_-_copia_enruwo.jpg)`, 
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
         backgroundSize: '84px',

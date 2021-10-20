@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
-import { Link } from 'react-router-dom'
+import { Form, Button } from 'react-bootstrap';
+import { useForm } from '../hooks/useForm';
 
 const DetalleReto = (data) => {
     console.log(data.location.data?.item)
@@ -35,10 +36,66 @@ let video = data.location.data?.item
                     height='300px'
                    
                 />
+        <h2 className="titulo">¿Ya finalizaste el reto? cuéntanos como te ha parecido </h2>
 
-        <a href="https://co.pinterest.com/pin/454019206167243720/feedback/?invite_code=d7dc09b58710bd81dd410918d2781e4c&sender_id=454019343592719107">
-        Dieta y consejos</a>
-            
+<Form
+                className="formRegistro"
+                // onSubmit={handleComentarios}
+                >
+        
+                  <Form.Group className="mb-3" controlId="formBasicName">
+                    <Form.Label>Nombres y Apellidos</Form.Label>
+                    <Form.Control
+                        type="text"
+                        placeholder="Ingrese su información"
+                        required
+                        name="nombre"
+                        // value={nombre}
+                        // onChange={handleInputChange}
+                    />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Correo</Form.Label>
+                    <Form.Control
+                        type="email"
+                        placeholder="email"
+                        name="email"
+                        required
+                        // value={email}
+                        // onChange={handleInputChange}
+                    />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicName">
+                    <Form.Label>Comentarios</Form.Label>
+                    <textarea
+                            name="description"
+                            className="form-control mt-2"
+                            autoComplete="of"
+                            // value={description}
+                            // onChange={handleInputChange}
+                        ></textarea>
+                </Form.Group>
+                
+                <br /> <br />  <br />
+                <Button variant="info" type="submit" style={{ marginLeft: "32%", marginTop: '-4.8rem', color: 'white' }}>
+                    Enviar
+                </Button>
+
+            </Form>
+            <h2 className="titulo">Comparte tu avance</h2>
+            <div style={{ marginLeft: "0px" }}>
+                        <a href="https://m.facebook.com/home.php?ref=wizard&_rdr">
+                            <img src="https://res.cloudinary.com/dky22nhv5/image/upload/v1632679406/facebook_gqfii0.png" width="100px" alt="Logo" />
+                        </a>
+                        <a href="https://www.instagram.com/loversfitnnes/">
+                            <img src="https://res.cloudinary.com/dky22nhv5/image/upload/v1632679407/inst_yc3kha.png" width="100px" alt="Logo" />
+                        </a>
+                        <a style={{ marginLeft: "-2px" }} href="https://twitter.com/loversfitnnes?t=tqvG_H77EyfMkzN24479lg&s=09">
+                            <img src="https://res.cloudinary.com/dky22nhv5/image/upload/v1633958065/Imagen2_wmxycr.png" width="100px" alt="Logo" />
+                        </a>
+                    </div>
         </div>
          );
 }

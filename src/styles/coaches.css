@@ -1,5 +1,6 @@
 .container_coaches{
     display: flex;
+    
 }
 .perfil{
     display: flex;
@@ -10,4 +11,43 @@
 .img_perfil{
     width: 100px;
     height: 100px;
+}
+
+.logofb{
+    width: 30px;
+    height: 30px;
+    margin-left: -50px;
+}
+
+.logoinsta{
+    width: 32px;
+    height: 32px;
+    margin-top: -68px;
+    margin-left: 60px;
+}
+
+.logofbo{
+    width: 30px;
+    height: 30px;
+    margin-left: -50px;
+}
+
+.logoinstag{
+    width: 32px;
+    height: 32px;
+    margin-top: -68px;
+    margin-left: 60px;
+}
+
+.logofab{
+    width: 30px;
+    height: 30px;
+    margin-left: -50px;
+}
+
+.logoinst{
+    width: 32px;
+    height: 32px;
+    margin-top: -68px;
+    margin-left: 60px;
 }

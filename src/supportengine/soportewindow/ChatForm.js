@@ -96,7 +96,7 @@ const ChatForm = (props) => {
                       Bienvenido a <br/>nuestro chat
                 </div>
                 <form
-                style={{position: 'relative', width: '100%', top:'19.75%'}}
+                style={{position: 'relative', width: '100%', marginLeft:"-3px", top:'19.75%'}}
                     onSubmit={(e) => handleSubmit(e)}
                 >
                 <input 

@@ -1,4 +1,5 @@
 import { collection, addDoc, doc, deleteDoc } from 'firebase/firestore'
+import { useDispatch } from 'react-redux'
 import { db } from '../firebase/firebaseConfig'
 import { loadAsesor } from '../helpers/loadAsesor'
 import { loadCarrito } from '../helpers/loadCarrito'
@@ -36,7 +37,7 @@ export const ListarCar = uid => {
     return async (dispatch) => {
     
         const cards = await loadCarrito(uid)
-        console.log(cards)
+        // console.log(cards)
         dispatch(addNewProCarro(cards))
     }
 }
@@ -44,7 +45,20 @@ export const DeleteProCarro = (id) => {
     return async (dispatch, getState) => {
         const uid = getState().login.id;
         await deleteDoc(doc(db, `${uid}/asesor/data/`, `${id}`));
-            dispatch(logout())
+            dispatch(eliminarCarrito())
     }
 }
 
+
+export const eliminarCarrito = (id, all = false) => {
+
+    return async (dispatch) => {
+    console.log(id, all);
+    if(all){
+        dispatch({type: typesProducto.remover_todo, payload:id})
+    } else{
+        dispatch({type: typesProducto.remover_uno, payload:id})
+    }
+    }
+    
+};

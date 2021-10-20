@@ -14,7 +14,7 @@ const Avatar = (props) => {
                 ...styles.avatarHello,
                 ...{opacity: hovered? '1' : '0'}
             }}
-            >¡Hola! <br/> soy Oscar</div>     
+            >¡Hola! <br/> Estamos para ti</div>     
             <div
             className='transition-3'
             onMouseEnter={()=> setHovered(true)}

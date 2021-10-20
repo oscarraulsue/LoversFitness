@@ -95,6 +95,7 @@ const useStyles = makeStyles((theme) => ({
         margin: "0",
         top: "30px",
         marginBottom: "1rem",
+        color: "#FFFFFF",
         width:"100%"
     },
 
@@ -104,10 +105,10 @@ const useStyles = makeStyles((theme) => ({
         margin: "0",
         padding: "0",
         width:"100%",
-        color: "#000",
+        color: "#FFFFFF",
 
         "& a": {
-            color: "#000",
+            color: "#FFFFFF",
             fontSize: "1rem",
             fontWeight: 'bold',
             marginRight: " 20px",
@@ -117,6 +118,7 @@ const useStyles = makeStyles((theme) => ({
         },
         "& a:hover": {
             cursor: "pointer",
+            color: "#FFFFFF",
             boxShadow: "-2px 2px 5px grey"
         }
     },

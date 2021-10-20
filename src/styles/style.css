@@ -12,7 +12,7 @@
   }
   
   .container_portada{
-    width: 100vh;
+    width: 100%;
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
@@ -148,3 +148,18 @@
     padding: 2rem;
     font-family: 'Noto Sans Display', sans-serif;
   }
+
+  .teleme{
+    width: 10px;
+  }
+
+  /* RETOS */
+
+  .imagen_reto{
+    width: 300px;
+    height: 200px;
+    padding-left: 10px;
+  }
+
+  
+  

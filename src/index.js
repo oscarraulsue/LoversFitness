@@ -14,6 +14,7 @@ import './styles/coaches.css'
 import './styles/pintarCard.css'
 import './styles/programas.css'
 import './styles/poradaPrincipal.css'
+import './styles/carrito.css'
 
 
 

@@ -1,0 +1,51 @@
+
+
+.enca{
+    color: white;
+    font-size: 18px;
+}
+
+.agregar{
+    border: none;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.compra{
+    border: none;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.signos{
+    border-radius: 5px;
+    margin-left: 30px;
+    width: 28px;
+    
+}
+
+.signo{
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.nompro{
+    color: white;
+}
+
+.precio{
+    color: white;
+}
+
+.cantidad{
+    color: white;
+}
+
+.total{
+    color: white;
+}
+
+.next{
+    margin-left: 10px;
+}

@@ -62,9 +62,9 @@ export const ListarProducto = () => {
 
                                 prodImp.map((element, index) => (
                                     
-                                    <Link
+                                    <Link 
                                         key={index}
-                                        style={{ textDecoration: "none", color: "black" }}
+                                        style={{ textDecoration: "none", color: "#FFFFFF"  }}
                                         to={{
                                             pathname: "/detalle",
                                             data: { element }

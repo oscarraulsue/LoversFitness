@@ -27,7 +27,7 @@ export const Telemedicina = () => {
                     5. Plan de alimentación, menús de ejemplos <br/>
                     y recomendaciones de acuerdo a sus necesidades. </h1>
 
-             <Link className="nu" to="/auth/atencionnutricion" type="button">Ver Perfil Nutrición</Link><br />
+             <Link className="nut" to="/auth/atencionnutricion" type="button">Ver Perfil Nutrición</Link><br />
         </div>
     )
 }

@@ -3,7 +3,7 @@ import {Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { NewProCarro } from '../actions/actionCarrito';
-
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 
 
@@ -166,6 +166,7 @@ const hadlePlus = () => {
                 </Link>
                 </div>
                 <div className="detalleProducto" style={{marginRight:"60px"}}>
+               
                     <p style={{fontWeight:"bold", fontSize:"22px"}}>{imagen.nom}</p>
                     <h1 style={{color:"#f0cd05"}}>$ {imagen.precio}</h1>
                     <p>{imagen.detPre}</p>
@@ -173,22 +174,26 @@ const hadlePlus = () => {
                     <p>{imagen.detProducto}</p>
                 </div>
                 <div className="detallePrecio">
+                <Link to = "/auth/carrito">
+                <button className="btn btn-success compra"
+                   ><ShoppingCartIcon/></button>
+                   </Link>
                     <h1 style={{color:"#f0cd05"}}>$ {imagen.precio}</h1>
                     <p>{imagen.detPre}</p>
-                    <button
+                    <button className="signos"
                     onClick={hadleless}
                     >-</button>
                     <label>{cantidad}</label>
-                    <button
+                    <button className="signo"
                     onClick={hadlePlus}
                     >+</button>
                     <br/>
                     <button
                   onClick={()=>{dispatch(NewProCarro(imagen.nom, imagen.color, imagen.detProducto, imagen.detPre, imagen.precio, imagen.img, cantidad))}}
-                    
+                    className="btn btn-success agregar"
                     >
                     Agregar al Carrito</button>
-                    <button>Comprar ahora</button>
+
                 </div>
             
 

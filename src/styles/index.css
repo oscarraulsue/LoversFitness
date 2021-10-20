@@ -37,6 +37,7 @@
 }
 imagen-portada{
   width:"100%";
+
 }
 
 .container_coaches{
@@ -53,18 +54,18 @@ imagen-portada{
 
 .prin{
   /* background-color: #2B2F3A; */
-  height: 900px;
+  height: 800px;
 }
 
 .teleme{
   height: 400px; 
-  width: 1340px;   
+  width: 1430px;   
   margin-top: -20px;
 }
 
 .resena{
   /* float: right; */
-  margin-top: -390px;
+  margin-top: -375px;
   color: white;
   text-align: right;
   font-style: oblique;
@@ -97,7 +98,7 @@ imagen-portada{
 
 .telemed{
   height: 400px; 
-  width: 1340px;
+  width: 1430px;
   margin-top: 40px;
 }
 
@@ -121,14 +122,28 @@ imagen-portada{
 
 .nu{
   margin-left: 80px;
-  margin-top: 20px;
+  margin-top: -10px;
   text-decoration: none;
   color: #40e0d0;
   background-color: #2B2F3A;
   text-align: center;
   width: 290px;
-  height: 80px;
-  padding-top: 25px;
+  height: 60px;
+  padding-top: 15px;
+  border-radius: 10px;
+  font-size: 22px;
+}
+
+.nut{
+  margin-left: 80px;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #40e0d0;
+  background-color: #2B2F3A;
+  text-align: center;
+  width: 290px;
+  height: 60px;
+  padding-top: 15px;
   border-radius: 10px;
   font-size: 22px;
 }
@@ -157,18 +172,39 @@ imagen-portada{
 
 /* AtencionMedica */
 
-.container{
-  height: 650px;
+.container1{
+  height: 750px;
+  background-image: url("https://media.istockphoto.com/photos/gym-equipment-for-weight-training-background-picture-id875209356?k=20&m=875209356&s=170667a&w=0&h=FKV2iAR4ytVvr61aURdnRYxX5lydaJMdsoZ3LxV7mLM=");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 50px;
 }
 
 .atencion{
-  border: 2px solid blueviolet;
-  margin-top: 20px;
+
+  background-color: #2B2F3A;
+  border: 2px solid #2B2F3A;
   width: 800px;
-  height: 630px;
-  margin-left: 200px;
-  border-radius: 20px;
-  /* background-color: #2B2F3A; */
+  
+  margin-left: 300px;
+  height: 650px;
+  border-radius: 10px;
+  margin-top: 20px;
+  width: 800px; 
+}
+
+.de{
+  text-align: center;
+  /* font-weight: bolder; */
+  font-size: 22px;
+  margin-top: 40px;
+  padding-top: 10px;
+  /* color: #40e0d0; */
+  border: 2px solid blueviolet;
+  border-radius: 10px;
+  width: 600px;
+  height: 120px;
+  margin-left: 100px;
 }
 
 .logo{
@@ -186,7 +222,7 @@ imagen-portada{
 }
 
 .descrip{
-  margin-top: -70px;
+  margin-top: 70px;
   text-align: center;
   color: blueviolet;
 }
@@ -230,14 +266,20 @@ imagen-portada{
 /* AtencionNutricion */
 
 .containerr{
-  height: 650px;
+  height: 700px;
+  background-image: url("https://wupfitnesscenter.es/wp-content/uploads/2020/04/fitness-y-alimentacion-durante-la-cuarentena.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 50px;
 }
 
 .nutri{
+  background-color: #000000c9;
   border: 2px solid #2B2F3A;
   width: 800px;
+  
   margin-left: 300px;
-  height: 600px;
+  height: 630px;
   border-radius: 10px;
 }
 
@@ -251,7 +293,7 @@ imagen-portada{
 .aten{
   border-radius: 300px;
   width: 150px;
-  margin-left: 200px;
+  margin-left: 330px;
   margin-top: 80px;
 }
 
@@ -262,22 +304,22 @@ imagen-portada{
 
 .des{
   text-align: center;
-  font-weight: bolder;
+  /* font-weight: bolder; */
   font-size: 22px;
   margin-top: 40px;
   padding-top: 10px;
-  color: #40e0d0;
+  /* color: #40e0d0; */
   border: 2px solid blueviolet;
   border-radius: 10px;
   width: 600px;
   height: 100px;
   margin-left: 100px;
-  background-color: blueviolet;
+  /* background-color: blueviolet; */
 }
 
 .for{
   font-weight: inherit;
-  color: grey;
+  color: rgb(153, 151, 151);
   font-size: 20px;
   text-align: center;
   margin-top: 20px;
