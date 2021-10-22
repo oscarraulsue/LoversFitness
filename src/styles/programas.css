@@ -1,13 +1,21 @@
 .container_pro{
-    margin-top: 40px;
-    margin: 0;
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     width: 75%;
     margin: auto;
-    
+}
+
+.container_ret{
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-wrap: wrap; */
+    width: 75%;
+    /* margin: auto; */
     
 }
 
@@ -17,3 +25,37 @@
     margin-top: 10px;
     margin-left: 10px;
 }
+
+.imagen_reto{
+    width: 300px;
+    height: 200px; 
+    margin-top: 20px;
+    padding-left: 10px;
+    
+}
+
+.App1{
+    color: white;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.imagen_reto1{
+    width: 300px;
+    height: 200px;
+    padding-left: 20px;
+    padding-top: 50px;
+    display: inline-block;
+    margin-left: 365px;
+}
+
+
+.comenta{
+    width: 275px;    
+}
+
+.titulo{
+    color: white;
+}
+
+ 

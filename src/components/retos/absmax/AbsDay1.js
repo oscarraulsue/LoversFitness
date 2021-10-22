@@ -19,8 +19,8 @@ const AbsDay1 = () => {
                     height='300px'
                    
                 />
-        <a href="https://co.pinterest.com/pin/454019206167243720/feedback/?invite_code=d7dc09b58710bd81dd410918d2781e4c&sender_id=454019343592719107">
-        Dieta y consejos</a>
+        {/* <a href="https://co.pinterest.com/pin/454019206167243720/feedback/?invite_code=d7dc09b58710bd81dd410918d2781e4c&sender_id=454019343592719107">
+        Dieta y consejos</a> */}
 
         </div>
     )

@@ -3,7 +3,7 @@ import { Table } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
 import { DeleteProCarro } from '../actions/actionCarrito';
-import { typesProducto } from '../types/types';
+
 
 
 const Carrito = () => {
@@ -12,25 +12,14 @@ const Carrito = () => {
     let prod = carrito.carrito?.producto
 
 
-    const dispatch = useDispatch()
-
-    // const eliminarCarrito = (id, all = false) => {
-    //     console.log(id, all);
-    //     if(all){
-    //         dispatch({type: typesProducto.remover_todo, payload:id})
-    //     } else{
-    //         dispatch({type: typesProducto.remover_uno, payload:id})
-    //     }
-        
-    // };
-
+    
     return (
         <div>
-              <Table striped bordered hover>
+              <Table striped bordered hover className="tab">
                 <thead>
                     <tr>
                         <th></th>
-                        <th className="enca">Producto</th>
+                        <th className="encab">Producto</th>
                         <th className="enca">Precio</th>
                         <th className="enca">Cantidad</th>
                         <th className="enca">Sub-Total</th>
@@ -45,13 +34,13 @@ const Carrito = () => {
                                 prod.map((element, index) => (
 
                                     <tr key={index}>
-                                        <td><img src={element.producto.newProducto.img[0].response  } alt="" width="50px" /></td>
+                                        <td ><img src={element.producto.newProducto.img[0].response  } alt="" width="50px" /></td>
                                         <td className="nompro">{element.producto.newProducto.nom}</td>
-                                        <td className="precio">{element.producto.newProducto.precio}</td>
+                                        <td className="precio">$ {element.producto.newProducto.precio}</td>
                                         <td className="cantidad">{element.producto.newProducto.cantidad}</td>
-                                        <td className="cantidad">{element.producto.newProducto.cantidad * element.producto.newProducto.precio}</td>
+                                        <td className="cantidad"> $ {element.producto.newProducto.cantidad * element.producto.newProducto.precio}.00</td>
                                         <td>
-                                            <button className="btn btn-danger" onClick={()=>{dispatch(DeleteProCarro())}}
+                                            <button className="btn btn-danger"
                                       >Eliminar</button>
                                         </td>
 

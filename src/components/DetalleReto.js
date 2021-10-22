@@ -12,8 +12,8 @@ let video = data.location.data?.item
            
 
             <h2 className="titulo">Bienvenido al Dia {data.location.data?.index + 1}</h2>
-            <p>Si apenas estás empezando, puedes realizar 1 sola ronda de la rutina completa. 
-            <br/> Si deseas exigirte un poco mas y acelerar tu proceso de cambio, puedes repetirla 2 veces</p>
+            <p className="titulo">Si apenas estás empezando, puedes realizar 1 sola ronda de la rutina completa, si deseas 
+            <br/>  exigirte un poco más y acelerar tu proceso de cambio, puedes repetirla 2 veces.</p>
 
             <ReactPlayer
                 style={{ display: 'flex',margin: '40px auto ',alignItems: 'center'}}
@@ -25,7 +25,7 @@ let video = data.location.data?.item
                     height='300px'
                    
                 />
-        <h2 className="titulo"> Luego del calentamiento comencemos con la rutina del dia</h2>
+        <h2 className="titulo"> Luego del calentamiento comencemos con la rutina del día.</h2>
         <ReactPlayer
                 style={{ display: 'flex',margin: '40px auto ',alignItems: 'center'}}
                     url={video}
@@ -36,7 +36,7 @@ let video = data.location.data?.item
                     height='300px'
                    
                 />
-        <h2 className="titulo">¿Ya finalizaste el reto? cuéntanos como te ha parecido </h2>
+        <h2 className="titulo">¿Ya finalizaste el reto? cuéntanos como te ha parecido. </h2>
 
 <Form
                 className="formRegistro"
@@ -67,7 +67,7 @@ let video = data.location.data?.item
                     />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicName">
+                <Form.Group className="mb-3 comenta" controlId="formBasicName">
                     <Form.Label>Comentarios</Form.Label>
                     <textarea
                             name="description"
@@ -79,7 +79,7 @@ let video = data.location.data?.item
                 </Form.Group>
                 
                 <br /> <br />  <br />
-                <Button variant="info" type="submit" style={{ marginLeft: "32%", marginTop: '-4.8rem', color: 'white' }}>
+                <Button variant="info" type="submit" style={{ marginLeft: "38%", marginTop: '-4.8rem', color: 'white' }}>
                     Enviar
                 </Button>
 

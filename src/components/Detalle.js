@@ -120,14 +120,14 @@ const hadlePlus = () => {
     return (
         <>
         <div className="contgrid">
-              <div className="container" style={{marginRight:"-70px"}}>
+              <div className="container" style={{marginRight:"-90px"}}>
             <div className="pictures" id="pictures">
             {
                         (imag) ?
                             (
 
                                 imag.map((element, index) => (
-                                    <div className="contProducto" key={index}>
+                                    <div className="contProducto1" key={index}>
                                     <img className="img" 
                                     onMouseMove={()=> changeImg(element.response, index)} 
                                     id={index} 
@@ -168,23 +168,23 @@ const hadlePlus = () => {
                 <div className="detalleProducto" style={{marginRight:"60px"}}>
                
                     <p style={{fontWeight:"bold", fontSize:"22px"}}>{imagen.nom}</p>
-                    <h1 style={{color:"#f0cd05"}}>$ {imagen.precio}</h1>
+                    <h1 className="" style={{color: "#2cec4d"}}>$ {imagen.precio}</h1>
                     <p>{imagen.detPre}</p>
                     <h1 style={{fontSize:"20px"}}>Color: {imagen.color}</h1>
                     <p>{imagen.detProducto}</p>
                 </div>
                 <div className="detallePrecio">
                 <Link to = "/auth/carrito">
-                <button className="btn btn-success compra"
+                <button className="btn btn-success compras"
                    ><ShoppingCartIcon/></button>
                    </Link>
-                    <h1 style={{color:"#f0cd05"}}>$ {imagen.precio}</h1>
-                    <p>{imagen.detPre}</p>
-                    <button className="signos"
+                    <h1 style={{color:"#2cec4d"}}>$ {imagen.precio}</h1>
+                    <p className="depo">{imagen.detPre}</p>
+                    <button className="btn btn-danger menos"
                     onClick={hadleless}
                     >-</button>
                     <label>{cantidad}</label>
-                    <button className="signo"
+                    <button className="btn btn-success mas"
                     onClick={hadlePlus}
                     >+</button>
                     <br/>

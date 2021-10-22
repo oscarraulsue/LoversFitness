@@ -62,9 +62,9 @@ export const ListarProducto = () => {
 
                                 prodImp.map((element, index) => (
                                     
-                                    <Link 
+                                    <Link className="tarjeta"
                                         key={index}
-                                        style={{ textDecoration: "none", color: "#FFFFFF"  }}
+                                        style={{ textDecoration: "none", color: "black", textAlign: "center"  }}
                                         to={{
                                             pathname: "/detalle",
                                             data: { element }
@@ -78,7 +78,7 @@ export const ListarProducto = () => {
 
                                             <img className="imgPro" src={element.img[0].response} alt="" />
                                             <h1 className="nomPro">{element.nom}</h1>
-                                            <h1 className="prePro">$ {element.precio}</h1>
+                                            <h1 className="preProd">$ {element.precio}</h1>
                                             <h1 className="detpPro">{element.detPre}</h1>
 
                                         </div>

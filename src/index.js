@@ -18,6 +18,7 @@ import './styles/carrito.css'
 
 
 
+
 ReactDOM.render(
   <Provider store={store}>
     <RegistroApp />

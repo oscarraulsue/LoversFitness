@@ -15,7 +15,7 @@ function Retos () {
         <div className="App">
            
 
-            <h2 className="titulo">Retos</h2>
+            <h2 className="container_ret">Retos</h2>
             <div className="container_portada">
    
             { retos.length > 1 && retos.map((item, index) => {

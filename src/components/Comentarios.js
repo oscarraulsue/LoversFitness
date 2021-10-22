@@ -26,10 +26,10 @@ export const Comentarios = () => {
     
 
     return (
-        <div className="containerRegistro">
+        <div className="containerComentarios">
             <br />
             <Form
-                className="formRegistro"
+                className="formComentarios"
                 onSubmit={handleComentarios}>
         
             <Form.Group className="mb-3" controlId="formBasicSexo">
