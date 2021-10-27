@@ -22,7 +22,6 @@ export const Pilates = () => {
        
     }, [])
 
-    console.log("yo soy pilates",pilates)
     
     return (
         <div className="container_productos">

@@ -22,7 +22,6 @@ export const Kickboxing = () => {
        
     }, [])
 
-    console.log("yo soy kickboxing",kickboxing)
     
     return (
         <div className="container_productos">

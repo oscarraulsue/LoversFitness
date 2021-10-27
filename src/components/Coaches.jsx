@@ -2,11 +2,13 @@ import React from 'react'
 
 
 export const Coaches = () => {
+    window.scroll({ top: 0 })
     return (
+        
         <div className="container_coaches">
             
             <div className="perfil">
-                <img className="img_perfil1" src="https://res.cloudinary.com/djlvgbuji/image/upload/v1634425337/Imagen1_nyoioc.png" alt="" srcset="" />
+                <img className="img_perfil1" src="https://res.cloudinary.com/djlvgbuji/image/upload/v1634425337/Imagen1_nyoioc.png" alt="" srcSet="" />
                 <h5 className="nomja">Javier Reig</h5>
                 <h6 className="entrenador_javier">Entrenador Personal</h6>
                 
@@ -19,7 +21,7 @@ export const Coaches = () => {
                 
             </div>
             <div className="perfil">
-                <img className="img_perfil1"  src="https://res.cloudinary.com/djlvgbuji/image/upload/v1634425337/Imagen3_oesxf3.png" alt="" srcset="" />
+                <img className="img_perfil1"  src="https://res.cloudinary.com/djlvgbuji/image/upload/v1634425337/Imagen3_oesxf3.png" alt="" srcSet="" />
                 <h5 className="nomi">Iván Poza</h5>
                 <h6 className="entrenador_ivan">Entrenador Personal</h6>
                 <a href="https://web.facebook.com/ivan.pozagonzalez/?_rdc=1&_rdr">
@@ -30,7 +32,7 @@ export const Coaches = () => {
                         </a>
             </div>
             <div className="perfil">
-                <img className="img_perfil2"  src="https://res.cloudinary.com/djlvgbuji/image/upload/v1634425337/Imagen2_brrjdv.png" alt="" srcset="" />
+                <img className="img_perfil2"  src="https://res.cloudinary.com/djlvgbuji/image/upload/v1634425337/Imagen2_brrjdv.png" alt="" srcSet="" />
                 <h5 className="nomcar">Carlos López</h5>
                 <h6 className="entrenador_carlos">Entrenador Personal</h6>
                 <a href="https://web.facebook.com/carlos.lopezsantos.12?fref=ts&_rdc=1&_rdr">

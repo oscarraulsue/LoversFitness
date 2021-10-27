@@ -1,12 +1,18 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
 import { Form, Button } from 'react-bootstrap';
-import { useForm } from '../hooks/useForm';
+import {  useSelector } from 'react-redux';
 
 const DetalleReto = (data) => {
-    console.log(data.location.data?.item)
-let video = data.location.data?.item
-    console.log()
+    window.scroll({ top: 0 })
+    const usuario = useSelector(state => state.login)
+    let video = data.location.data?.item
+    let dia = data.location.data?.index + 1 
+    let frase = usuario.name + " ha realizado con éxito el día " + dia
+    let autor = "del reto " + data.location.data?.nom
+    let tweet= 'https://twitter.com/intent/tweet?hashtags=FITNESSLOVERS&related=loversfitnnes&text=' +
+    encodeURIComponent( frase + ' ' + autor);
+    
     return (
         <div className="App">
            
@@ -92,7 +98,7 @@ let video = data.location.data?.item
                         <a href="https://www.instagram.com/loversfitnnes/">
                             <img src="https://res.cloudinary.com/dky22nhv5/image/upload/v1632679407/inst_yc3kha.png" width="100px" alt="Logo" />
                         </a>
-                        <a style={{ marginLeft: "-2px" }} href="https://twitter.com/loversfitnnes?t=tqvG_H77EyfMkzN24479lg&s=09">
+                        <a style={{ marginLeft: "-2px" }} href={tweet}>
                             <img src="https://res.cloudinary.com/dky22nhv5/image/upload/v1633958065/Imagen2_wmxycr.png" width="100px" alt="Logo" />
                         </a>
                     </div>

@@ -7,7 +7,7 @@ const SupportAdmin = () => {
     <ChatEngine
     projectID='497e79ac-497e-42b3-9cd4-742722a12565'
     height='100vh'
-    userName="OscarSue"
+    userName="Ana Lucía Contreras Durán"
     userSecret= "2030"   
   />
   );

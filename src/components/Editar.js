@@ -1,9 +1,9 @@
 import { Form, Button } from 'react-bootstrap';
 import { useForm } from '../hooks/useForm';
 import { useDispatch, useSelector } from 'react-redux'
-import { deleteProducto, editar, listAct2 } from '../actions/actionRegProducto';
+import { deleteProducto, editar } from '../actions/actionRegProducto';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
+
 
 
 export const Editar = (dataPro) => {
@@ -13,6 +13,7 @@ export const Editar = (dataPro) => {
     if(dataPro.history.location.dataPro){
      ediPro = dataPro.history.location.dataPro.imagen
      id = ediPro.id;
+     
 }
     const proActivo = useSelector(state => state.activo)
     console.log("proActivo")

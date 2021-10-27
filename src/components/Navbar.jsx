@@ -154,13 +154,6 @@ const Navbar = () => {
                     <label>¡Hola!</label> <br/>
                     <label>{usuario.name}</label>
                     </div>
-
-                <Link
-                    to="/"
-                    spy={true}
-                    smooth={true}
-                    duration={500}
-                    offset={-64}>Mis retos</Link>
                     
                 <Link
                     to="/auth/supportadmin"
@@ -250,6 +243,7 @@ const useStyles = makeStyles((theme) => ({
         minWidth: "140px",
         textDecoration: "none",
         marginLeft: "20px",
+        zIndex:'100',
         color: "white",
         "&:hover": {
             color: "#22D9DB"

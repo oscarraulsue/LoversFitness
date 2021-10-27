@@ -21,8 +21,6 @@ export const Cardio = () => {
        peticionesGet();
        
     }, [])
-
-    console.log("yo soy cardio",cardio)
     
     return (
         <div className="container_productos">

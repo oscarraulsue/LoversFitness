@@ -24,7 +24,7 @@ const ChatForm = (props) => {
         console.log(callback, email)
         axios.put('https://api.chatengine.io/chats/',
         {
-            "usernames": ["OscarSue", email],
+            "usernames": ["Ana Lucía Contreras Durán", email],
             "is_direct_chat": true
         },
         {headers: {"Private-Key": "9cd8488d-13cc-4d3a-8ecf-ee89a5690313"}}
@@ -88,7 +88,7 @@ const ChatForm = (props) => {
                 <Avatar 
                     style={{
                         position: 'relative',
-                        left: '40%',
+                        left: '35%',
                         top: '10%',
                       }}
                 />

@@ -1,19 +1,19 @@
-import React, { useState } from 'react'
-import { Form, Button } from 'react-bootstrap';
+import React from 'react'
+import { Form } from 'react-bootstrap';
 import { useForm } from '../hooks/useForm';
 
 const RegistroReto = () => {
-    const [allVideo, setAllVideo] = useState([])
-    const [video1, setVideo1] = useState("")
+
+
     const [formValues, handleInputChange] = useForm({
         nombre: '',
         portada: '',
-        video: video1,
+        video: "",
     });
 
     const { nombre, portada, video } = formValues;
 
-    console.log(allVideo)
+    
 
 
 

@@ -22,7 +22,6 @@ export const Dance = () => {
        
     }, [])
 
-    console.log("yo soy dance",dance)
     
     return (
         <div className="container_productos">

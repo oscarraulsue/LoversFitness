@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useState, useEffect} from 'react'
 import PintarCard from './PintarCard'
 
-const url ="https://api-proyectofinal.herokuapp.com/meditacion"
+const url ="https://api-proyectofinal.herokuapp.com/yoga"
 
 export const Meditacion = () => {
     const[meditacion, setMeditacion]= useState([])
@@ -12,7 +12,7 @@ export const Meditacion = () => {
         await axios.get(url)
         .then(res =>{
             setMeditacion(res.data);
-           
+            console.log(res.data)
         }).catch(error=>{
             console.log(error);
         })
@@ -21,8 +21,6 @@ export const Meditacion = () => {
        peticionesGet();
        
     }, [])
-
-    console.log("yo soy meditacion",meditacion)
     
     return (
         <div className="container_productos">

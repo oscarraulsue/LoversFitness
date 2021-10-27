@@ -17,9 +17,6 @@ export const typesProducto = {
     delete: 'delete',
     active: 'active',
     carrito: 'carrito',
-    agregar_producto: 'agregar_producto',
-    remover_uno: 'remover_uno',
-    remover_todo: 'remover_todo',
-    limpiar_carrito: 'limpiar_carrito',
+    compras: 'compras'
     
 }

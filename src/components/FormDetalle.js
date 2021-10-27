@@ -1,26 +1,60 @@
 import React from 'react'
 import { Form, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { useForm } from '../hooks/useForm';
-
+import { useDispatch, useSelector } from 'react-redux';
+import {registerCompra} from '../actions/actionRegCompra';
+import { DeleteProCarro } from '../actions/actionCarrito'; 
 
 export const FormDetalle = () => {
+    let today = new Date();
+    let dd = today.getDate();
+    let mm = today.getMonth() + 1; 
+    let yyyy = today.getFullYear();
+    const dispatch = useDispatch();
+    const carrito = useSelector(state => state.carrito)
+    let prod = carrito.carrito?.producto
+    console.log(prod)
+    if (dd < 10) {
+      dd = '0' + dd;
+    }
+    
+    if (mm < 10) {
+      mm = '0' + mm;
+    }
+    today = mm + '/' + dd + '/' + yyyy;
 
-    const [formValues, handleInputChange] = useForm({
-            nombre: "Anlli Gallardo",
-            direccion: "cl. 127bis #91-60",
-            telefono: "3142144768",
-            otrotel: "3106805526",
-            fecha: "21/10/21",
-            total: "$300.00"
-    });
+    const [formValues, handleInputChange, rest] = useForm({
+            nombre: "",
+            direccion: "",
+            telefono: "",
+            otrotel: "",
+              });
 
-    const { nombre, direccion, telefono, otrotel, fecha, total} = formValues;
+    const { nombre, direccion, telefono, otrotel } = formValues;
+    let total= 0
+    prod?.forEach((element) => {
+       let subTotal= element.producto.newProducto.cantidad * element.producto.newProducto.precio * 1000 
+      total += subTotal
 
+    })
+    const handleRegistro = (e) => {
+        e.preventDefault();
+        dispatch(registerCompra(nombre, direccion, telefono, otrotel, today, prod )) 
+        prod?.forEach((element) => {
+           dispatch(DeleteProCarro(element.id))
+
+        
+    })
+        rest()
+    }
         
     return (
         <div className="formDetalle">
 
-            <Form className="cart" >
+            <Form className="cart" 
+             onSubmit={handleRegistro}
+            >
             <h1 className="titlee">Datos del Cliente</h1>
              <br/>
                 <Form.Group className="mb-3 caja" controlId="formBasicNombre">
@@ -30,7 +64,7 @@ export const FormDetalle = () => {
                         name="nombre"
                         value={nombre}
                         onChange={handleInputChange}
-                        readOnly
+
                     />
                 </Form.Group>
                 <Form.Group className="mb-3 caja" controlId="formBasicprecio">
@@ -40,7 +74,7 @@ export const FormDetalle = () => {
                         name="direccion"
                         value={direccion}
                         onChange={handleInputChange}
-                        readOnly
+
                     />
                 </Form.Group>
 
@@ -51,7 +85,7 @@ export const FormDetalle = () => {
                         name="telefono"
                         value={telefono}
                         onChange={handleInputChange}
-                        readOnly
+
                     />
                 </Form.Group>
 
@@ -62,7 +96,7 @@ export const FormDetalle = () => {
                         name="otrotel"
                         value={otrotel}
                         onChange={handleInputChange}
-                        readOnly
+
                     />
                 </Form.Group>
 
@@ -71,8 +105,7 @@ export const FormDetalle = () => {
                     <Form.Control
                         type="text"
                         name="fecha"
-                        value={fecha}
-                        onChange={handleInputChange}
+                        value={today}
                         readOnly
                     />
                 </Form.Group>
@@ -85,8 +118,15 @@ export const FormDetalle = () => {
                         onChange={handleInputChange}
                         readOnly
                     />
-                </Form.Group>             
-                
+                </Form.Group>     
+                <Button variant="primary" type="submit">
+                    Enviar
+                </Button>        
+                <Link
+            to = "/apptienda"
+            >
+            <button className="btn btn-danger next">Volver</button>
+            </Link>
             </Form>
 
         </div>

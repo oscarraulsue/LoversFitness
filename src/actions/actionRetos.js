@@ -1,7 +1,7 @@
 import { types } from "../types/types";
 import { db } from "../firebase/firebaseConfig";
-import { addDoc, updateDoc,collection,deleteDoc,getDocs, doc, query, where } from "@firebase/firestore";
-import Swal from 'sweetalert2'
+import {collection,getDocs } from "@firebase/firestore";
+
 
 let id = ""
 export const listRetos = () => {

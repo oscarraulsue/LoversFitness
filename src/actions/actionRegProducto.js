@@ -1,6 +1,6 @@
 import { typesProducto } from "../types/types";
 import { db } from "../firebase/firebaseConfig";
-import { addDoc, updateDoc,collection,deleteDoc,getDocs, doc, query, where } from "@firebase/firestore";
+import { addDoc, updateDoc,collection,deleteDoc,getDocs, doc } from "@firebase/firestore";
 import Swal from 'sweetalert2'
 
 let id = ""

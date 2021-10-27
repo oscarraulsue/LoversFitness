@@ -8,6 +8,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 
 export const Detalle = (data) => {
+   
     const proActivo = useSelector(state => state.active)
 
     let imagen = " "
@@ -42,7 +43,7 @@ export const Detalle = (data) => {
 
 
 useEffect(() => {
-    
+    window.scroll({ top: 0 })
      setPicture(document.querySelector('#pictures'))
      setRect(document.querySelector('#rect'))
      setZoom(document.querySelector('#zoom'))
@@ -70,27 +71,27 @@ let x, y, xx, yy;
 
 const move = (e) => {
 
-    xx = (x-144) * 4.8;
-    yy = (y-148) * 4.6; 
+    xx = (x-224) * 4.8;
+    yy = (y-178) * 4.6; 
     x = e.pageX;
     y = e.clientY;
-    if(x < (w1+80)){
-        x=w1+80
+    if(x < (w1+155)){
+        x=w1+155
     }
  
     if(scrolly > 0){
       
         y = scrolly + y;
     }
-    if(y < (158)){
-        y=158
+    if(y < (175)){
+        y=175
     }
-    if(y > (508)){
-        y=508
+    if(y > (522)){
+        y=522
     }
 
-    if (x > (w1+430)) {
-        x=w1+430
+    if (x > (w1+510)) {
+        x=w1+510
        
     }
     
@@ -181,12 +182,21 @@ const hadlePlus = () => {
                     <h1 style={{color:"#2cec4d"}}>$ {imagen.precio}</h1>
                     <p className="depo">{imagen.detPre}</p>
                     <button className="btn btn-danger menos"
+                    style = {{borderRadius: "50%",  paddingTop: "-150px" }}
                     onClick={hadleless}
-                    >-</button>
-                    <label>{cantidad}</label>
+                    ><label style = {{cursor:"pointer", marginTop: "-14px", marginLeft: "-3px", position:"absolute" }}
+                    >-</label>
+                    </button>
+                    <label
+                    style = {{ marginLeft: "-10px" }}
+                    >{cantidad}</label>
                     <button className="btn btn-success mas"
+                    style = {{borderRadius: "50%"}}
                     onClick={hadlePlus}
-                    >+</button>
+                    >
+                    <label style = {{ cursor:"pointer", marginTop: "-14px", marginLeft: "-5px", position:"absolute" }}
+                    >+</label>
+                    </button>
                     <br/>
                     <button
                   onClick={()=>{dispatch(NewProCarro(imagen.nom, imagen.color, imagen.detProducto, imagen.detPre, imagen.precio, imagen.img, cantidad))}}

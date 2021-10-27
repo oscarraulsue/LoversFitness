@@ -3,7 +3,7 @@ import { useForm } from '../hooks/useForm';
 
 
 export const Comentarios = () => {
-    
+    window.scroll({ top: 0 })
 
     const [formValues, handleInputChange] = useForm({
         nombre: '',
@@ -12,14 +12,11 @@ export const Comentarios = () => {
         sexo: ''
     });
 
-    const { nombre, email, description, sexo } = formValues;
+    const { nombre, email, description } = formValues;
 
     const buttonMailto = document.querySelector('#mail')
     
     const handleComentarios = () => {
-        // e.preventDefault();
-        // const form = new FormData(this)
-        // console.log(nombre)
         buttonMailto.setAttribute('href', `mailto:loversfitnes812@gmail.com?subject= nombre y apellido: ${nombre} correo: ${email}&body=${description}`)
         buttonMailto.click()
     }

@@ -8,11 +8,16 @@ import { DeleteProCarro } from '../actions/actionCarrito';
 
 const Carrito = () => {
     const carrito = useSelector(state => state.carrito)
-    console.log(carrito.carrito.producto)
     let prod = carrito.carrito?.producto
+    const dispatch = useDispatch();
+    let total= 0
+    prod?.forEach((element) => {
+       let subTotal= element.producto.newProducto.cantidad * element.producto.newProducto.precio * 1000 
+      total += subTotal
+
+    })
 
 
-    
     return (
         <div>
               <Table striped bordered hover className="tab">
@@ -38,9 +43,10 @@ const Carrito = () => {
                                         <td className="nompro">{element.producto.newProducto.nom}</td>
                                         <td className="precio">$ {element.producto.newProducto.precio}</td>
                                         <td className="cantidad">{element.producto.newProducto.cantidad}</td>
-                                        <td className="cantidad"> $ {element.producto.newProducto.cantidad * element.producto.newProducto.precio}.00</td>
+                                        <td className="cantidad"> $ {element.producto.newProducto.cantidad * element.producto.newProducto.precio*1000}</td>
                                         <td>
                                             <button className="btn btn-danger"
+                                            onClick={() =>{dispatch(DeleteProCarro(element.id))}}
                                       >Eliminar</button>
                                         </td>
 
@@ -54,9 +60,9 @@ const Carrito = () => {
                     <tr>
                     <th colspan="4" scope="col" className="text-right total">TOTAL :</th>
                     <th scope="col">
-                        <p id="total">"hola"</p>
+                        <p id="total">{total}</p>
                     </th>
-                    <td>{}</td>
+                    <td></td>
                 </tr>
                 </tbody>
             </Table>

@@ -11,6 +11,7 @@ import { activeReducer } from '../reducers/activeReducer';
 import { carritoReducer } from '../reducers/carritoReducer';
 import { comentariosReducer } from '../reducers/comentariosReducer'
 import { retosReducer } from '../reducers/retosReducer'
+import { comprasReducer } from '../reducers/comprasReducer'
 
 const composeEnhancers = (typeof window !== 'undefined' && 
 window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
@@ -27,6 +28,7 @@ const reducers = combineReducers({
     carrito: carritoReducer,
     comentarios: comentariosReducer,
     retos: retosReducer,
+    compras: comprasReducer,
 })
 
 

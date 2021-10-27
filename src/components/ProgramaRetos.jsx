@@ -1,6 +1,5 @@
 import React from 'react'
 import Retos from './Retos'
-import Navbar from './Navbar'
 import Programas from './Programas'
 
 export const ProgramaRetos = () => {

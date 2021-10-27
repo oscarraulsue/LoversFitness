@@ -22,8 +22,6 @@ export const Yoga = () => {
        
     }, [])
 
-    console.log("yo soy yoga",yoga)
-    
     return (
         <div className="container_productos">
             <div className="productos_pintar">

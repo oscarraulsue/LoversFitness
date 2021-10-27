@@ -7,7 +7,6 @@ export const AtencionMedica = () => {
     return (
         <div className="container1">
             <div className="atencion">
-                {/* <img className="logo" src="https://res.cloudinary.com/djlvgbuji/image/upload/v1634148608/logolovers_jetoby.png" alt="" /> */}
                 <h3 className="descrip">Hola, 
                 ya puedes hacer tus consultas a <br />
                 través de nuestros chats.</h3>

@@ -6,6 +6,7 @@ import { ListarProducto } from './ListarProducto'
 import { List, makeStyles, Toolbar} from '@material-ui/core';
 import { useState } from "react"
 import { Link } from 'react-router-dom';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 const AppTienda = (history) => {
     const classes = useStyles();
@@ -75,7 +76,12 @@ const AppTienda = (history) => {
                         />
 
                     </form>
-
+                    <Link to = "/auth/carrito">
+                <button 
+                style={{marginLeft:"-270px", position:"relative", zIndex:'-1'}}
+                className="btn btn-success compras"
+                   ><ShoppingCartIcon/></button>
+                   </Link>
                 </List>
             </Toolbar>
         <ListarProducto /> 
