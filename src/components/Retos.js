@@ -6,13 +6,13 @@ import { Link } from 'react-router-dom';
 
 function Retos () {
   const { retos } = useSelector(store => store.retos);
- 
+    console.log(retos)
   return (
         <div className="App">
            
 
             <h2 className="container_ret">Retos</h2>
-            <div className="container_portada" style={{display:"grid", gridTemplateColumns:'repeat(3, 1fr)'}}>
+            <div className="container_portada" style={{marginLeft:"2px", display:"grid", gridTemplateColumns:'repeat(3, 1fr)'}}>
    
             { retos.length > 1 && retos.map((item, index) => {
              return (

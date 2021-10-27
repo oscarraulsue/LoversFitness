@@ -7,6 +7,7 @@ import {registerCompra} from '../actions/actionRegCompra';
 import { DeleteProCarro } from '../actions/actionCarrito'; 
 
 export const FormDetalle = () => {
+    window.scroll({ top: 0 })
     let today = new Date();
     let dd = today.getDate();
     let mm = today.getMonth() + 1; 
@@ -123,7 +124,7 @@ export const FormDetalle = () => {
                     Enviar
                 </Button>        
                 <Link
-            to = "/apptienda"
+            to = "/auth/carrito"
             >
             <button className="btn btn-danger next">Volver</button>
             </Link>

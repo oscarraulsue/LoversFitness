@@ -78,7 +78,7 @@ const AppTienda = (history) => {
                     </form>
                     <Link to = "/auth/carrito">
                 <button 
-                style={{marginLeft:"-270px", position:"relative", zIndex:'-1'}}
+                style={{marginLeft:"-270px"}}
                 className="btn btn-success compras"
                    ><ShoppingCartIcon/></button>
                    </Link>
@@ -124,8 +124,7 @@ const useStyles = makeStyles((theme) => ({
         },
         "& a:hover": {
             cursor: "pointer",
-            color: "#FFFFFF",
-            boxShadow: "-2px 2px 5px grey"
+
         }
     },
 

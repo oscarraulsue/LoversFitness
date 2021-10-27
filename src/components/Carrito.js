@@ -73,7 +73,7 @@ const Carrito = () => {
             </Link>
 
             <Link
-            to = "/detalle"
+            to = "/apptienda"
             >
             <button className="btn btn-primary next">Volver</button>
             </Link>

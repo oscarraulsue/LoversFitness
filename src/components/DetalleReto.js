@@ -12,7 +12,10 @@ const DetalleReto = (data) => {
     let autor = "del reto " + data.location.data?.nom
     let tweet= 'https://twitter.com/intent/tweet?hashtags=FITNESSLOVERS&related=loversfitnnes&text=' +
     encodeURIComponent( frase + ' ' + autor);
-    
+    let instagram = 'https://telegram.me/share/url?url=DIRECCION_URL&text=' +
+    encodeURIComponent('' + frase + '' + autor);
+    let facebook = 'https://www.facebook.com/sharer/sharer.php?u=' +
+    encodeURIComponent('' + frase + '' + autor);
     return (
         <div className="App">
            
