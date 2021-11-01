@@ -184,6 +184,7 @@ const Navbar = () => {
                     to="/"
                     spy={true}
                     smooth={true}
+                    style={{marginLeft : "93px"}}
                     >Cerrar sesión</Link>
 
 </div>

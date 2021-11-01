@@ -58,9 +58,13 @@ const Carrito = () => {
                             <p>Datos no disponibles</p>
                     }
                     <tr>
-                    <th colspan="4" scope="col" className="text-right total">TOTAL :</th>
+                    <th colspan="4" scope="col" className="text-right total"
+                    style={{color:"white"}}
+                    >TOTAL :</th>
                     <th scope="col">
-                        <p id="total">{total}</p>
+                        <p id="total"
+                         style={{color:"white"}}
+                        >{total}</p>
                     </th>
                     <td></td>
                 </tr>
